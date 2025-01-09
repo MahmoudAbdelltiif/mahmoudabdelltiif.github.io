@@ -19,14 +19,14 @@
 
 ---
 
-### Objective
+# Objective
 
 A recent graduate in Management Information Systems with expertise in data analysis and marketing.  
 Seeking a Media Buyer position to leverage my analytical and strategic skills in optimizing digital advertising campaigns.
 
 ---
 
-### Education
+## Education
 
 - **Bachelor of Management Information Systems**  
   Nile Higher Institutes, 2020 – 2024 | Mansoura, Egypt
