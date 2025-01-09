@@ -8,10 +8,9 @@
     </div>
     <img src="WhatsApp%20Image%202025-01-09%20at%2004.21.44_79a68f9f.jpg" 
          alt="Profile Picture" 
-         width="150" 
-         height="150" 
-         style="margin-left: 20px; border: 2px solid #000;" />
+         style="margin-left: 20px; max-height: 300px;" />
 </div>
+
 
 
 ---
