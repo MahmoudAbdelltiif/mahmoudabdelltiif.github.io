@@ -1,6 +1,4 @@
-
-<div style="display: flex; align-items: center;">
-    <img src="WhatsApp%20Image%202025-01-09%20at%2004.21.44_79a68f9f.jpg" alt="Profile Picture" width="150" style="border-radius: 50%; margin-right: 20px;" />
+<div style="display: flex; align-items: center; justify-content: space-between;">
     <div>
         <h1>Mahmoud Abdel Latif</h1>
         <p>Mit Ghamr, Dakahlia, EG</p>
@@ -8,7 +6,13 @@
         <p>📧 <a href="mailto:mahmoud.abdelltiif@gmail.com">mahmoud.abdelltiif@gmail.com</a></p>
         <p>🔗 <a href="https://www.linkedin.com/in/mahmoudabdelltif/">LinkedIn</a></p>
     </div>
+    <img src="WhatsApp%20Image%202025-01-09%20at%2004.21.44_79a68f9f.jpg" 
+         alt="Profile Picture" 
+         width="150" 
+         height="150" 
+         style="margin-left: 20px; border: 2px solid #000;" />
 </div>
+
 
 ---
 
