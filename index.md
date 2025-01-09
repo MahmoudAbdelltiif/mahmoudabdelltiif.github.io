@@ -1,9 +1,20 @@
-# Mahmoud Abdel Latif
+# Mahmoud Abdellatif
 
 Mit Ghamr, Dakahlia, EG  
 📞 +201101199359  
 📧 [mahmoud.abdelltiif@gmail.com](mailto:mahmoud.abdelltiif@gmail.com)  
 🔗 [LinkedIn](https://www.linkedin.com/in/mahmoudabdelltif/)  
+
+<div style="display: flex; align-items: center;">
+    <img src="WhatsApp%20Image%202025-01-09%20at%2004.21.44_79a68f9f.jpg" alt="Profile Picture" width="150" style="border-radius: 50%; margin-right: 20px;" />
+    <div>
+        <h1>Mahmoud Abdel Latif</h1>
+        <p>Mit Ghamr, Dakahlia, EG</p>
+        <p>📞 +201101199359</p>
+        <p>📧 <a href="mailto:mahmoud.abdelltiif@gmail.com">mahmoud.abdelltiif@gmail.com</a></p>
+        <p>🔗 <a href="https://www.linkedin.com/in/mahmoudabdelltif/">LinkedIn</a></p>
+    </div>
+</div>
 
 ---
 
