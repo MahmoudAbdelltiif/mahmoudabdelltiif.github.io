@@ -4,7 +4,13 @@
         <p>Mit Ghamr, Dakahlia, EG</p>
         <p>📞 +201101199359</p>
         <p>📧 <a href="mailto:mahmoud.abdelltiif@gmail.com">mahmoud.abdelltiif@gmail.com</a></p>
-        <p>🔗 <a href="https://www.linkedin.com/in/mahmoudabdelltif/">LinkedIn</a></p>
+         <p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" 
+                 alt="LinkedIn Logo" 
+                 width="20" 
+                 style="vertical-align: middle; margin-right: 5px;" />
+            <a href="https://www.linkedin.com/in/mahmoudabdelltif/">LinkedIn</a>
+        </p>
     </div>
     <img src="WhatsApp%20Image%202025-01-09%20at%2004.21.44_79a68f9f.jpg" 
          alt="Profile Picture" 
