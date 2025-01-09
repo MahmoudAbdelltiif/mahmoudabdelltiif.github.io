@@ -1,9 +1,3 @@
-# Mahmoud Abdellatif
-
-Mit Ghamr, Dakahlia, EG  
-📞 +201101199359  
-📧 [mahmoud.abdelltiif@gmail.com](mailto:mahmoud.abdelltiif@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/mahmoudabdelltif/)  
 
 <div style="display: flex; align-items: center;">
     <img src="WhatsApp%20Image%202025-01-09%20at%2004.21.44_79a68f9f.jpg" alt="Profile Picture" width="150" style="border-radius: 50%; margin-right: 20px;" />
