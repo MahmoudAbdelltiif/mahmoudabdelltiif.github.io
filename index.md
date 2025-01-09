@@ -1,6 +1,5 @@
 <div style="display: flex; align-items: center; justify-content: space-between;">
     <div>
-        <h1>Mahmoud Abdellatif</h1>
         <p>Mit Ghamr, Dakahlia, EG</p>
         <p>📞 <a href="https://wa.me/201101199359" target="_blank">+201101199359</a></p>
         <p>📧 <a href="mailto:mahmoud.abdelltiif@gmail.com">mahmoud.abdelltiif@gmail.com</a></p>
