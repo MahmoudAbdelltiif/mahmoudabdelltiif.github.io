@@ -26,7 +26,7 @@ Seeking a Media Buyer position to leverage my analytical and strategic skills in
 
 ---
 
-## Education
+# Education
 
 - **Bachelor of Management Information Systems**  
   Nile Higher Institutes, 2020 – 2024 | Mansoura, Egypt
@@ -36,7 +36,7 @@ Seeking a Media Buyer position to leverage my analytical and strategic skills in
 
 ---
 
-### Professional Experience
+# Professional Experience
 
 ## Marketing & Media Buying Intern  
 **Elbatt & Sapaq** | 10/2024 – 01/2025 | Mansoura, Egypt  
@@ -52,7 +52,7 @@ Seeking a Media Buyer position to leverage my analytical and strategic skills in
 
 ---
 
-### Skills
+# Skills
 
 - **Media Buying Platforms:** Google Ads, Facebook Ads, Snapchat Ads, TikTok Ads  
 - **Data Visualization:** Tableau, Power BI, Matplotlib, Seaborn  
@@ -61,7 +61,7 @@ Seeking a Media Buyer position to leverage my analytical and strategic skills in
 
 ---
 
-### Certifications
+# Certifications
 
 - [Delivering Quality Work with Agility](https://coursera.org/share/df84aee34a8e8c38717c2802c460855f)
 - [Foundations of Data Science](https://coursera.org/share/1c4edfee4f2574ba342c3a554f262116)
