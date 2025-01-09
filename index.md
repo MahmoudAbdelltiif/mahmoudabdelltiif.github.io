@@ -38,7 +38,7 @@ Seeking a Media Buyer position to leverage my analytical and strategic skills in
 
 ## Professional Experience
 
-### Marketing & Media Buying Intern  
+## Marketing & Media Buying Intern  
 **Elbatt & Sapaq** | 10/2024 – 01/2025 | Mansoura, Egypt  
 - Managed campaigns on platforms: Google Ads, Facebook Ads, Snapchat Ads, and TikTok Ads.  
 - Performed campaign performance analysis using Google Analytics and Microsoft Clarity.  
