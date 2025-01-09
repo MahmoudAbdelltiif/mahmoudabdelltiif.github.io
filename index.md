@@ -1,8 +1,8 @@
 <div style="display: flex; align-items: center; justify-content: space-between;">
     <div>
-        <h1>Mahmoud Abdel Latif</h1>
+        <h1>Mahmoud Abdellatif</h1>
         <p>Mit Ghamr, Dakahlia, EG</p>
-        <p>📞 +201101199359</p>
+        <p>📞 <a href="https://wa.me/201101199359" target="_blank">+201101199359</a></p>
         <p>📧 <a href="mailto:mahmoud.abdelltiif@gmail.com">mahmoud.abdelltiif@gmail.com</a></p>
          <p>
             <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" 
@@ -16,8 +16,6 @@
          alt="Profile Picture" 
          style="margin-left: 20px; max-height: 300px;" />
 </div>
-
-
 
 ---
 
@@ -65,8 +63,8 @@ Seeking a Media Buyer position to leverage my analytical and strategic skills in
 
 ## Certifications
 
-- **Delivering Quality Work with Agility** - Coursera  
-- **Foundations of Data Science** - Coursera  
-- **Get Started with Python** - Coursera  
-- **Go Beyond the Numbers: Translate Data into Insights** - Coursera  
-- **The Power of Statistics** - Coursera  
+- [Delivering Quality Work with Agility](https://coursera.org/share/df84aee34a8e8c38717c2802c460855f)
+- [Foundations of Data Science](https://coursera.org/share/1c4edfee4f2574ba342c3a554f262116)
+- [Get Started with Python](https://coursera.org/share/306eadc29f74f49365b11a9b01d87bc8)
+- [Go Beyond the Numbers: Translate Data into Insights](https://www.coursera.org/account/accomplishments/records/8BBE2LC9XNXV)
+- [The Power of Statistics](https://www.coursera.org/account/accomplishments/records/4V1I1GKEGBEF) 
