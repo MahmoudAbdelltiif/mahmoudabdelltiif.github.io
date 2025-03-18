@@ -46,13 +46,8 @@ Seeking a Media Buyer position to leverage my analytical and strategic skills in
 - Creative Development: Plan and prepare compelling creatives for ad campaigns to boost engagement and conversions.  
 - Paid Advertising Management: Run and optimize paid ad campaigns on Meta Ads, Google Ads, and TikTok Ads to ensure high ROI.  
 - Audience Targeting & Performance Analysis: Utilize tools like Google Analytics and Microsoft Clarity to track, analyze, and enhance campaign performance.  
-- Scaling Strategies: 
-  - Expand campaign reach using horizontal scaling (targeting new audiences and platforms).  
-  - Use vertical scaling (increasing budget on high-performing ads).  
-  - Optimize creatives, bidding, and audience segmentation to maintain efficiency and maximize ROI.  
-- Retargeting Strategies: 
-  - Re-engage potential customers with dynamic retargeting ads based on their interactions.  
-  - Use lookalike audiences to find similar high-value users and optimize performance to boost conversions and retention.  
+- Scaling Strategies: Expand campaign reach using horizontal scaling (targeting new audiences and platforms). Use vertical scaling (increasing budget on high-performing ads). Optimize creatives, bidding, and audience segmentation to maintain efficiency and maximize ROI.  
+- Retargeting Strategies: Re-engage potential customers with dynamic retargeting ads based on their interactions. Use lookalike audiences to find similar high-value users and optimize performance to boost conversions and retention.  
 
 
 ## Marketing & Media Buying Intern  
