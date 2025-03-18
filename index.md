@@ -37,6 +37,24 @@ Seeking a Media Buyer position to leverage my analytical and strategic skills in
 
 # Professional Experience
 
+## Media Buyer  
+**Sapaq**  | 01/2025 – Present | Mansoura, Egypt 
+- Business Analysis: Conduct in-depth market research to identify opportunities and optimize marketing strategies.  
+- Competitor Analysis: Monitor competitors’ strategies and performance to refine marketing approaches.  
+- Media Planning: Develop and execute data-driven media plans to maximize campaign effectiveness.  
+- Trend-Based Product Selection: Identify trending products and strategically add them to the store to drive sales.  
+- Creative Development: Plan and prepare compelling creatives for ad campaigns to boost engagement and conversions.  
+- Paid Advertising Management: Run and optimize paid ad campaigns on Meta Ads, Google Ads, and TikTok Ads to ensure high ROI.  
+- Audience Targeting & Performance Analysis: Utilize tools like Google Analytics and Microsoft Clarity to track, analyze, and enhance campaign performance.  
+- Scaling Strategies: 
+  - Expand campaign reach using horizontal scaling (targeting new audiences and platforms).  
+  - Use vertical scaling (increasing budget on high-performing ads).  
+  - Optimize creatives, bidding, and audience segmentation to maintain efficiency and maximize ROI.  
+- Retargeting Strategies: 
+  - Re-engage potential customers with dynamic retargeting ads based on their interactions.  
+  - Use lookalike audiences to find similar high-value users and optimize performance to boost conversions and retention.  
+
+
 ## Marketing & Media Buying Intern  
 **Elbatt & Sapaq** | 10/2024 – 01/2025 | Mansoura, Egypt  
 - Managed campaigns on platforms: Google Ads, Facebook Ads, Snapchat Ads, and TikTok Ads.  
