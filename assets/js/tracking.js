@@ -9,7 +9,7 @@
   window.dataLayer = window.dataLayer || [];
 
   // GTM Container ID — REPLACE WITH YOUR GTM ID
-  const GTM_ID = 'GTM-XXXXXXX';
+  const GTM_ID = 'GTM-5PC6W47D';
 
   // Inject GTM snippets
   // Head snippet
