@@ -22,9 +22,11 @@ const caseStudies = [
     keyMetric: "37.66X ROAS",
     platforms: ["Meta Ads", "Google Ads", "TikTok Ads"],
     images: [
-      "assets/images/case-studies/case-01/slide-1.jpg",
-      "assets/images/case-studies/case-01/slide-2.jpg",
-      "assets/images/case-studies/case-01/slide-3.jpg"
+      "assets/images/case-studies/case-01/slide-1.png",
+      "assets/images/case-studies/case-01/slide-2.png",
+      "assets/images/case-studies/case-01/slide-3.png",
+      "assets/images/case-studies/case-01/slide-4.png",
+      "assets/images/case-studies/case-01/slide-5.png"
     ],
     challenge: "Adahi Al-Barakah, an online store offering Qurbani, Aqiqah, charity, vows, and expiation services, needed to maximize online sales during the high-demand Qurbani season. The store provides Sharia-compliant slaughtering, meat distribution to families in need across Africa, and full documentation through photos and videos. The primary challenge was driving qualified traffic from Saudi Arabia, reducing customer acquisition cost, and maximizing return on ad spend across multiple digital advertising platforms within a limited seasonal window.",
     strategy: [
