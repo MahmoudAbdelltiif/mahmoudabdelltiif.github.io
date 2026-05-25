@@ -38,7 +38,7 @@
   // ═══════════════════════════════════════════════
   // 🔗 PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE
   // ═══════════════════════════════════════════════
-  const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+  const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxVpyjqelpr2VdX7dpriQYGVVn1R2Gx5LTf0WiwTzHfxXZLt6QQjYhlw3lSj1ik9fZG6Q/exec';
   // ═══════════════════════════════════════════════
 
   function initForm() {
