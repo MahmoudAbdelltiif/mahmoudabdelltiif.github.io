@@ -79,7 +79,7 @@
       }
 
       // Submit to Formspree (replace YOUR_FORM_ID)
-      const formAction = form.getAttribute('action') || 'https://formspree.io/f/YOUR_FORM_ID';
+      const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxVpyjqelpr2VdX7dpriQYGVVn1R2Gx5LTf0WiwTzHfxXZLt6QQjYhlw3lSj1ik9fZG6Q/exec';
 
       fetch(formAction, {
         method: 'POST',
