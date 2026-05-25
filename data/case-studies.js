@@ -13,47 +13,48 @@
 
 const caseStudies = [
 
-  // ── TEMPLATE: Copy this block for each case study ──
-  // {
-  //   id: 1,
-  //   title: "Fashion E-commerce Brand — ROAS 4x",
-  //   industry: "E-commerce",
-  //   thumbnail: "assets/images/case-studies/case-01/thumb.jpg",
-  //   keyMetric: "320% ROAS",
-  //   platforms: ["Meta Ads", "Google Ads"],
-  //   images: [
-  //     "assets/images/case-studies/case-01/slide-1.jpg",
-  //     "assets/images/case-studies/case-01/slide-2.jpg",
-  //     "assets/images/case-studies/case-01/slide-3.jpg"
-  //   ],
-  //   challenge: "The brand was struggling with high customer acquisition costs and low return on ad spend across their paid channels. Their existing campaigns lacked proper audience segmentation and creative optimization.",
-  //   strategy: [
-  //     "Implemented full-funnel campaign structure: Awareness → Consideration → Conversion",
-  //     "Built lookalike audiences from high-LTV customer segments",
-  //     "A/B tested 15+ creative variations per week",
-  //     "Deployed dynamic retargeting with catalog-based ads",
-  //     "Set up server-side tracking via CAPI for accurate attribution"
-  //   ],
-  //   results: [
-  //     { value: 320, suffix: "%", label: "ROAS" },
-  //     { value: 43, prefix: "$0.", suffix: "", label: "CPC" },
-  //     { value: 42, suffix: "%", label: "CTR" },
-  //     { value: 180, suffix: "%", prefix: "+", label: "Revenue" }
-  //   ]
-  // },
+  // ── Case Study 1: Adahi Al-Barakah ──
+  {
+    id: 1,
+    title: "Adahi Al-Barakah — 37.66X ROAS Seasonal Campaign",
+    industry: "E-commerce",
+    thumbnail: "assets/images/case-studies/case-01/thumb.jpg",
+    keyMetric: "37.66X ROAS",
+    platforms: ["Meta Ads", "Google Ads", "TikTok Ads"],
+    images: [
+      "assets/images/case-studies/case-01/slide-1.jpg",
+      "assets/images/case-studies/case-01/slide-2.jpg",
+      "assets/images/case-studies/case-01/slide-3.jpg"
+    ],
+    challenge: "Adahi Al-Barakah, an online store offering Qurbani, Aqiqah, charity, vows, and expiation services, needed to maximize online sales during the high-demand Qurbani season. The store provides Sharia-compliant slaughtering, meat distribution to families in need across Africa, and full documentation through photos and videos. The primary challenge was driving qualified traffic from Saudi Arabia, reducing customer acquisition cost, and maximizing return on ad spend across multiple digital advertising platforms within a limited seasonal window.",
+    strategy: [
+      "Deployed a multi-channel advertising strategy across Meta Ads, Google Ads, and TikTok Ads to cover the full customer journey from search intent and awareness to retargeting and purchase completion",
+      "Google Ads captured high-intent users actively searching for Qurbani, Aqiqah, and related services, driving qualified traffic with strong purchase intent",
+      "Meta Ads focused on sales campaigns and retargeting to maximize conversion rates, with dynamic creative optimization and audience segmentation",
+      "TikTok Ads expanded reach and generated additional direct sales through seasonal sales-focused creatives targeting interested users",
+      "Leveraged Salla store analytics for performance tracking, abandoned cart recovery (9.8% recovery rate), and conversion optimization"
+    ],
+    results: [
+      { value: 37.66, suffix: "X", label: "Meta ROAS" },
+      { value: 182.81, prefix: "SAR ", suffix: "K", label: "Total Sales" },
+      { value: 143, suffix: "%", label: "Target Achieved" },
+      { value: 251, suffix: "", label: "Total Orders" },
+      { value: 8.9, suffix: "X", label: "TikTok ROAS" },
+      { value: 727.3, prefix: "SAR ", suffix: "", label: "Avg Order Value" }
+    ]
+  },
 
-  // ── Add your actual case studies below ──
-  // Example:
+  // ── TEMPLATE: Copy this block for each new case study ──
   // {
-  //   id: 1,
-  //   title: "Your Case Study Title",
-  //   industry: "E-commerce", // Options: E-commerce, Real Estate, Education, FMCG, App Marketing
-  //   thumbnail: "assets/images/case-studies/case-01/thumb.jpg",
+  //   id: 2,
+  //   title: "Brand Name — Key Result",
+  //   industry: "E-commerce",  // Options: E-commerce, Real Estate, Education, FMCG, App Marketing
+  //   thumbnail: "assets/images/case-studies/case-02/thumb.jpg",
   //   keyMetric: "4x ROAS",
   //   platforms: ["Meta Ads", "Google Ads"],
   //   images: [
-  //     "assets/images/case-studies/case-01/slide-1.jpg",
-  //     "assets/images/case-studies/case-01/slide-2.jpg"
+  //     "assets/images/case-studies/case-02/slide-1.jpg",
+  //     "assets/images/case-studies/case-02/slide-2.jpg"
   //   ],
   //   challenge: "Description of the challenge...",
   //   strategy: [
