@@ -95,7 +95,7 @@
         return;
       }
 
-      if (messageVal.length < 20) {
+      if (messageVal.length < 10) {
         form.classList.add('form-error');
         setTimeout(function() { form.classList.remove('form-error'); }, 500);
         return;
