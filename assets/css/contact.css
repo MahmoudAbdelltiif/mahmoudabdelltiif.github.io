@@ -5,8 +5,8 @@
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: 60px;
-  padding: 80px 0;
+  gap: clamp(32px, 6vw, 60px);
+  padding: clamp(48px, 8vw, 80px) 0;
 }
 
 .contact-info {
@@ -22,8 +22,8 @@
 }
 
 .contact-info-item .info-icon {
-  width: 44px;
-  height: 44px;
+  width: clamp(38px, 5vw, 44px);
+  height: clamp(38px, 5vw, 44px);
   border-radius: var(--radius-sm);
   background: var(--blue-subtle);
   border: 1px solid var(--border-blue);
@@ -32,11 +32,11 @@
   justify-content: center;
   flex-shrink: 0;
   color: var(--blue-light);
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
 }
 
 .contact-info-item .info-text {
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   color: var(--text-secondary);
 }
 
@@ -58,13 +58,13 @@
 .social-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 18px;
+  gap: clamp(6px, 1vw, 8px);
+  padding: clamp(8px, 1.5vw, 10px) clamp(14px, 2.5vw, 18px);
   border-radius: var(--radius-sm);
   background: var(--bg-card);
   border: 1px solid var(--border);
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
   transition: all var(--transition-base);
   text-decoration: none;
 }
@@ -77,14 +77,14 @@
 }
 
 .social-link svg {
-  width: 18px;
-  height: 18px;
+  width: clamp(16px, 2vw, 18px);
+  height: clamp(16px, 2vw, 18px);
   fill: currentColor;
 }
 
 .availability-card {
   margin-top: 24px;
-  padding: 20px;
+  padding: clamp(14px, 2vw, 20px);
   border-radius: var(--radius-md);
   background: rgba(34, 197, 94, 0.05);
   border: 1px solid rgba(34, 197, 94, 0.2);
@@ -102,7 +102,7 @@
 }
 
 .availability-card span {
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
   color: var(--accent-green);
   font-weight: 500;
 }
@@ -112,7 +112,7 @@
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 36px;
+  padding: clamp(24px, 4vw, 36px);
 }
 
 .form-group {
@@ -121,7 +121,7 @@
 
 .form-group label {
   display: block;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
   font-weight: 500;
   color: var(--text-primary);
   margin-bottom: 8px;
@@ -135,13 +135,13 @@
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 14px 16px;
+  padding: clamp(11px, 2vw, 14px) clamp(12px, 2vw, 16px);
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   color: var(--text-primary);
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   outline: none;
 }
@@ -172,7 +172,7 @@
 }
 
 .form-group textarea {
-  min-height: 140px;
+  min-height: clamp(100px, 18vw, 140px);
   resize: vertical;
 }
 
@@ -189,8 +189,8 @@
 .form-submit .btn-primary {
   width: 100%;
   justify-content: center;
-  padding: 16px;
-  font-size: 1rem;
+  padding: clamp(13px, 2vw, 16px);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .form-submit .btn-primary .btn-content {
@@ -202,12 +202,12 @@
 /* Form States */
 .form-success {
   text-align: center;
-  padding: 40px 20px;
+  padding: clamp(28px, 5vw, 40px) clamp(16px, 3vw, 20px);
 }
 
 .form-success .success-icon {
-  width: 64px;
-  height: 64px;
+  width: clamp(52px, 7vw, 64px);
+  height: clamp(52px, 7vw, 64px);
   border-radius: 50%;
   background: rgba(34, 197, 94, 0.1);
   border: 2px solid var(--accent-green);
@@ -216,7 +216,7 @@
   justify-content: center;
   margin: 0 auto 16px;
   color: var(--accent-green);
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
 }
 
 .form-success h3 {

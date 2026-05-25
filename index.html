@@ -50,8 +50,8 @@
 
       <!-- CTAs -->
       <div class="hero-ctas reveal">
-        <a href="case-study.html" class="btn-primary" data-gtm-event="hero_cta_click" data-gtm-label="See My Work">
-          See My Work
+        <a href="case-study.html" class="btn-primary" data-gtm-event="hero_cta_click" data-gtm-label="See Case Studies">
+          See Case Studies
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="assets/docs/Mahmoud_Abdellatif_CV.pdf" class="btn-outline" download data-gtm-event="cv_download" data-gtm-label="Download CV">
@@ -71,11 +71,18 @@
           <div class="stat-label">Ad Spend Managed</div>
         </div>
         <div class="hero-stat">
-          <div class="stat-number"><span data-counter data-target="20" data-suffix="x+">0x+</span></div>
+          <div class="stat-number"><span data-counter data-target="3" data-suffix="x+">0x+</span></div>
           <div class="stat-label">Avg ROAS</div>
         </div>
       </div>
     </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator bounce">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </section>
 
   <!-- Scripts -->
   <script src="assets/js/tracking.js"></script>
@@ -88,14 +95,18 @@
   <!-- Hero-specific: Letter stagger + typing effect -->
   <script>
   (function() {
-    // Letter stagger for name
+    // Letter stagger for name — group by word to prevent mid-word line breaks
     const name = 'Mahmoud Abdellatif';
     const heroName = document.getElementById('heroName');
     if (heroName) {
-      heroName.innerHTML = name.split('').map(function(char, i) {
-        if (char === ' ') return '<span style="display:inline-block;width:0.3em">&nbsp;</span>';
-        return '<span class="stagger-letter" style="animation-delay:' + (i * 0.04) + 's">' + char + '</span>';
-      }).join('');
+      const words = name.split(' ');
+      heroName.innerHTML = words.map(function(word, wi) {
+        const letters = word.split('').map(function(char, li) {
+          const delay = (wi * 9 + li) * 0.04;
+          return '<span class="stagger-letter" style="animation-delay:' + delay + 's">' + char + '</span>';
+        }).join('');
+        return '<span class="word-group">' + letters + '</span>';
+      }).join(' ');
     }
 
     // Typing effect for roles

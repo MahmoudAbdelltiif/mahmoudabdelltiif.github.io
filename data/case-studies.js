@@ -6,7 +6,7 @@
    - Add your case studies below by copying the template
    - Images should be placed in: assets/images/case-studies/case-XX/
    - Reference images as: assets/images/case-studies/case-XX/filename.jpg
-   - The work.html page will automatically render cards from this array
+   - The case-study.html page will automatically render cards from this array
    - Modal will display the full case study on card click
    
    ============================================================ */

@@ -5,7 +5,7 @@
 .case-studies-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: clamp(16px, 3vw, 24px);
   position: relative;
 }
 
@@ -45,12 +45,12 @@
 }
 
 .case-study-card .card-body {
-  padding: 20px;
+  padding: clamp(14px, 2vw, 20px);
 }
 
 .case-study-card .card-industry {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: clamp(0.65rem, 1.1vw, 0.75rem);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--accent-cyan);
@@ -60,13 +60,13 @@
 .case-study-card .card-title {
   font-family: 'Syne', sans-serif;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
   color: var(--text-primary);
   margin-bottom: 8px;
 }
 
 .case-study-card .card-metric {
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   color: var(--accent-gold);
   font-weight: 600;
   margin-bottom: 12px;
@@ -79,15 +79,15 @@
 }
 
 .case-study-card .card-platforms .tag {
-  font-size: 0.7rem;
-  padding: 4px 10px;
+  font-size: clamp(0.6rem, 1vw, 0.7rem);
+  padding: clamp(3px, 0.5vw, 4px) clamp(8px, 1.5vw, 10px);
 }
 
 .case-study-card .card-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
   color: var(--blue-light);
   font-weight: 500;
   transition: gap var(--transition-fast);
@@ -98,19 +98,19 @@
 }
 
 .case-study-card .card-link svg {
-  width: 16px;
-  height: 16px;
+  width: clamp(14px, 2vw, 16px);
+  height: clamp(14px, 2vw, 16px);
 }
 
 /* Empty State */
 .empty-state {
   text-align: center;
-  padding: 80px 24px;
+  padding: clamp(48px, 8vw, 80px) clamp(16px, 3vw, 24px);
   grid-column: 1 / -1;
 }
 
 .empty-state .empty-icon {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
   margin-bottom: 20px;
   opacity: 0.3;
 }

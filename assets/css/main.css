@@ -31,10 +31,10 @@
   --border:       rgba(255, 255, 255, 0.06);
   --border-blue:  rgba(27, 108, 242, 0.3);
 
-  /* Spacing */
-  --section-padding: 80px 0;
+  /* Spacing (fluid) */
+  --section-padding: clamp(48px, 8vw, 80px) 0;
   --container-width: 1200px;
-  --container-padding: 0 24px;
+  --container-padding: 0 clamp(16px, 3vw, 24px);
 
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -151,7 +151,7 @@ p {
 
 /* ── Page Hero (shared mini-hero) ── */
 .page-hero {
-  padding: 120px 0 60px;
+  padding: clamp(80px, 15vw, 120px) 0 clamp(40px, 8vw, 60px);
   text-align: center;
   position: relative;
   background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
@@ -162,7 +162,7 @@ p {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px; height: 600px;
+  width: clamp(300px, 60vw, 600px); height: clamp(300px, 60vw, 600px);
   background: radial-gradient(circle, var(--blue-glow) 0%, transparent 70%);
   pointer-events: none;
   opacity: 0.3;
@@ -210,14 +210,14 @@ p {
 .btn-primary {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: clamp(6px, 1vw, 8px);
   background: var(--blue-primary);
   color: #fff;
   border-radius: var(--radius-sm);
-  padding: 14px 32px;
+  padding: clamp(11px, 2vw, 14px) clamp(20px, 4vw, 32px);
   font-family: 'Syne', sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
   cursor: pointer;
   transition: all var(--transition-base);
   border: none;
@@ -235,15 +235,15 @@ p {
 .btn-outline {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: clamp(6px, 1vw, 8px);
   background: transparent;
   border: 1px solid var(--border-blue);
   color: var(--blue-light);
   border-radius: var(--radius-sm);
-  padding: 14px 32px;
+  padding: clamp(11px, 2vw, 14px) clamp(20px, 4vw, 32px);
   font-family: 'Syne', sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
   transition: all var(--transition-base);
   text-decoration: none;
   cursor: pointer;
@@ -259,8 +259,8 @@ p {
 .tag {
   display: inline-flex;
   align-items: center;
-  padding: 6px 14px;
-  font-size: 0.8rem;
+  padding: clamp(4px, 1vw, 6px) clamp(10px, 2vw, 14px);
+  font-size: clamp(0.7rem, 1.2vw, 0.8rem);
   font-weight: 500;
   border-radius: 20px;
   background: var(--blue-subtle);
@@ -281,7 +281,7 @@ p {
 /* ── Component: Section Title ── */
 .section-title {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: clamp(36px, 6vw, 60px);
 }
 
 .section-title h2 {
@@ -318,11 +318,11 @@ p {
 .nav-container {
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 clamp(16px, 3vw, 24px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
+  height: clamp(56px, 8vw, 70px);
 }
 
 .nav-logo {
@@ -332,7 +332,7 @@ p {
   text-decoration: none;
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: 1.4rem;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
   color: var(--text-primary);
   transition: color var(--transition-fast);
 }
@@ -343,7 +343,7 @@ p {
 
 .nav-logo .logo-dot {
   color: var(--blue-primary);
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   line-height: 0;
 }
 
@@ -364,7 +364,7 @@ p {
 
 .nav-toggle span {
   display: block;
-  width: 24px;
+  width: clamp(20px, 3vw, 24px);
   height: 2px;
   background: var(--text-primary);
   border-radius: 2px;
@@ -393,8 +393,8 @@ p {
 .nav-links a {
   display: inline-flex;
   align-items: center;
-  padding: 8px 16px;
-  font-size: 0.9rem;
+  padding: clamp(6px, 1vw, 8px) clamp(12px, 2vw, 16px);
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
   font-weight: 500;
   color: var(--text-secondary);
   border-radius: var(--radius-sm);
@@ -429,7 +429,7 @@ p {
   background: var(--blue-primary);
   color: #fff;
   font-weight: 600;
-  padding: 8px 20px;
+  padding: clamp(6px, 1vw, 8px) clamp(14px, 2.5vw, 20px);
 }
 
 .nav-links .nav-cta:hover {
@@ -457,8 +457,8 @@ p {
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
     justify-content: center;
-    gap: 12px;
-    padding: 24px;
+    gap: clamp(4px, 1vw, 8px);
+    padding: clamp(16px, 4vw, 24px);
     transform: translateX(100%);
     transition: transform var(--transition-base);
     z-index: 999;
@@ -469,8 +469,8 @@ p {
   }
 
   .nav-links a {
-    font-size: 1.2rem;
-    padding: 14px 24px;
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
+    padding: clamp(10px, 2vw, 14px) clamp(16px, 3vw, 20px);
     width: 100%;
     justify-content: center;
   }
@@ -480,17 +480,17 @@ p {
 .site-footer {
   background: var(--bg-secondary);
   border-top: 1px solid var(--border);
-  padding: 60px 0 30px;
+  padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 3vw, 30px);
 }
 
 .footer-grid {
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 clamp(16px, 3vw, 24px);
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 40px;
+  gap: clamp(28px, 5vw, 48px);
+  margin-bottom: clamp(28px, 4vw, 40px);
 }
 
 .footer-brand .footer-logo {
@@ -499,18 +499,18 @@ p {
   gap: 2px;
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: 1.4rem;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
   color: var(--text-primary);
   margin-bottom: 12px;
 }
 
 .footer-brand .footer-logo .logo-dot {
   color: var(--blue-primary);
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 .footer-brand p {
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   color: var(--text-muted);
   max-width: 300px;
 }
@@ -519,9 +519,9 @@ p {
 .footer-social h4 {
   font-family: 'Syne', sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
   color: var(--text-primary);
-  margin-bottom: 16px;
+  margin-bottom: clamp(12px, 2vw, 16px);
 }
 
 .footer-links ul {
@@ -532,7 +532,7 @@ p {
 
 .footer-links a {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
   transition: color var(--transition-fast);
 }
 
@@ -549,7 +549,7 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px; height: 40px;
+  width: clamp(36px, 5vw, 40px); height: clamp(36px, 5vw, 40px);
   border-radius: var(--radius-sm);
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -573,7 +573,7 @@ p {
 .footer-bottom {
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 20px 24px 0;
+  padding: clamp(16px, 2vw, 20px) clamp(16px, 3vw, 24px) 0;
   border-top: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -581,7 +581,7 @@ p {
 }
 
 .footer-bottom p {
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 1.3vw, 0.85rem);
   color: var(--text-muted);
 }
 
@@ -590,7 +590,7 @@ p {
   align-items: center;
   gap: 6px;
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 1.3vw, 0.85rem);
   transition: color var(--transition-fast);
   cursor: pointer;
   background: none;
@@ -606,7 +606,6 @@ p {
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
   }
 
   .footer-bottom {
@@ -629,14 +628,14 @@ p {
 .text-center { text-align: center; }
 .text-blue   { color: var(--blue-primary); }
 .text-muted  { color: var(--text-muted); }
-.mt-1 { margin-top: 8px; }
-.mt-2 { margin-top: 16px; }
-.mt-3 { margin-top: 24px; }
-.mt-4 { margin-top: 32px; }
-.mb-1 { margin-bottom: 8px; }
-.mb-2 { margin-bottom: 16px; }
-.mb-3 { margin-bottom: 24px; }
-.mb-4 { margin-bottom: 32px; }
+.mt-1 { margin-top: clamp(6px, 1vw, 8px); }
+.mt-2 { margin-top: clamp(12px, 2vw, 16px); }
+.mt-3 { margin-top: clamp(16px, 3vw, 24px); }
+.mt-4 { margin-top: clamp(20px, 4vw, 32px); }
+.mb-1 { margin-bottom: clamp(6px, 1vw, 8px); }
+.mb-2 { margin-bottom: clamp(12px, 2vw, 16px); }
+.mb-3 { margin-bottom: clamp(16px, 3vw, 24px); }
+.mb-4 { margin-bottom: clamp(20px, 4vw, 32px); }
 
 /* ── Scroll Reveal ── */
 .reveal {
