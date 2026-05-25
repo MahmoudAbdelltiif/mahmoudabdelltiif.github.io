@@ -22,7 +22,7 @@
         <ul>
           <li><a href="index.html" data-gtm-event="footer_nav_click" data-gtm-label="Home">Home</a></li>
           <li><a href="about.html" data-gtm-event="footer_nav_click" data-gtm-label="About">About</a></li>
-          <li><a href="work.html" data-gtm-event="footer_nav_click" data-gtm-label="Work">Work</a></li>
+          <li><a href="case-study.html" data-gtm-event="footer_nav_click" data-gtm-label="Case Study">Case Study</a></li>
           <li><a href="experience.html" data-gtm-event="footer_nav_click" data-gtm-label="Experience">Experience</a></li>
           <li><a href="contact.html" data-gtm-event="footer_nav_click" data-gtm-label="Contact">Contact</a></li>
         </ul>
