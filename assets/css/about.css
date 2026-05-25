@@ -1,0 +1,188 @@
+/* ============================================================
+   ABOUT.CSS — About Me Page Styles
+   ============================================================ */
+
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.about-photo-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo {
+  width: 280px;
+  height: 280px;
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--border-blue);
+  box-shadow: 0 0 40px var(--blue-glow);
+  overflow: hidden;
+  animation: float 6s ease-in-out infinite;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 3rem;
+}
+
+.about-info h2 {
+  margin-bottom: 8px;
+}
+
+.about-info .about-title {
+  font-size: 1.1rem;
+  color: var(--blue-light);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.about-info .about-bio p {
+  margin-bottom: 16px;
+}
+
+.about-badges {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--accent-green);
+  font-weight: 500;
+}
+
+.availability-badge .pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-green);
+}
+
+/* Metrics Strip */
+.metrics-strip {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 0;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+
+.metric-item .metric-number {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.metric-item .metric-number .metric-suffix {
+  color: var(--blue-primary);
+}
+
+.metric-item .metric-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* What I Do */
+.what-i-do {
+  padding: 80px 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  padding: 36px;
+  text-align: center;
+}
+
+.service-card .service-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--blue-subtle);
+  border: 1px solid var(--border-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: var(--blue-light);
+  font-size: 1.5rem;
+}
+
+.service-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .about-photo {
+    margin: 0 auto;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-badges {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

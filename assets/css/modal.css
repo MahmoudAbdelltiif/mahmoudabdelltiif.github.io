@@ -1,0 +1,251 @@
+/* ============================================================
+   MODAL.CSS — Case Study Modal Styles
+   ============================================================ */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal-content {
+  background: var(--bg-modal);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 900px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-close {
+  position: sticky;
+  top: 16px;
+  float: right;
+  margin-right: 16px;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+  background: var(--blue-primary);
+  color: #fff;
+  border-color: var(--blue-primary);
+}
+
+.modal-header {
+  padding: 32px 32px 0;
+}
+
+.modal-header h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 4px;
+}
+
+.modal-header .modal-industry {
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Image Gallery */
+.modal-gallery {
+  padding: 24px 32px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  gap: 12px;
+  scrollbar-width: none;
+}
+
+.modal-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-gallery img {
+  scroll-snap-align: center;
+  width: 80%;
+  max-width: 500px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  background: var(--bg-card);
+}
+
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 0 16px;
+}
+
+.gallery-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.gallery-dot.active {
+  background: var(--blue-primary);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Platform Ticker in Modal */
+.modal-ticker {
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Case Study Details */
+.modal-details {
+  padding: 32px;
+}
+
+.modal-details .detail-meta {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.modal-details .detail-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modal-details h3 {
+  color: var(--blue-light);
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.modal-details p,
+.modal-details li {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.modal-details ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+/* Results Grid */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.result-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-blue);
+  border-radius: var(--radius-md);
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.result-card .result-number {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--blue-light);
+  margin-bottom: 4px;
+}
+
+.result-card .result-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Modal Navigation */
+.modal-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 32px 32px;
+  border-top: 1px solid var(--border);
+}
+
+.modal-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+}
+
+.modal-nav-btn:hover {
+  border-color: var(--border-blue);
+  color: var(--blue-light);
+  background: var(--blue-subtle);
+}
+
+/* Mobile Modal */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .modal-content {
+    max-height: 95vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+
+  .modal-header,
+  .modal-details,
+  .modal-nav {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .modal-gallery {
+    padding: 16px 20px;
+  }
+
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
