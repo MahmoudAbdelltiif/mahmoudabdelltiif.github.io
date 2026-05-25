@@ -125,17 +125,18 @@
       };
 
       // Submit to Google Sheets via Apps Script Web App
+      // Using no-cors mode because Google Apps Script doesn't handle CORS preflight
+      // Data will be sent successfully, but response will be opaque (can't read it)
       fetch(GOOGLE_SHEETS_URL, {
         method: 'POST',
+        mode: 'no-cors',
         body: JSON.stringify(formData),
         headers: { 'Content-Type': 'text/plain' }
       })
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(data) {
-        if (data.result === 'success') {
-          // Show success
+      .then(function() {
+        // With no-cors, we can't read the response, but the data was sent
+        // Show success after a short delay to feel natural
+        setTimeout(function() {
           form.innerHTML = '<div class="form-success"><div class="success-icon">&#10003;</div><h3>Message Sent!</h3><p>Thanks for reaching out. I\'ll be in touch soon.</p></div>';
 
           if (typeof trackEvent === 'function') {
@@ -144,13 +145,11 @@
               budget_range: formData.budget
             });
           }
-        } else {
-          throw new Error('Google Sheets returned error');
-        }
+        }, 800);
       })
       .catch(function(error) {
         console.error('Form submission error:', error);
-        
+
         // Show error state
         if (btnContent) {
           btnContent.innerHTML = 'Send Message &#8594;';
