@@ -25,7 +25,7 @@
         <li><a href="${basePath}index.html"           data-page="home"           data-gtm-event="nav_click" data-gtm-label="Home">Home</a></li>
         <li><a href="${basePath}about.html"           data-page="about"          data-gtm-event="nav_click" data-gtm-label="About">About</a></li>
         <li><a href="${basePath}skills.html"          data-page="skills"         data-gtm-event="nav_click" data-gtm-label="Skills">Skills</a></li>
-        <li><a href="${basePath}work.html"            data-page="work"           data-gtm-event="nav_click" data-gtm-label="Work">Work</a></li>
+        <li><a href="${basePath}case-study.html"            data-page="case-study"           data-gtm-event="nav_click" data-gtm-label="case-study">case-study</a></li>
         <li><a href="${basePath}experience.html"      data-page="experience"     data-gtm-event="nav_click" data-gtm-label="Experience">Experience</a></li>
         <li><a href="${basePath}certifications.html"  data-page="certifications" data-gtm-event="nav_click" data-gtm-label="Certifications">Certifications</a></li>
         <li><a href="${basePath}contact.html"         data-page="contact"        data-gtm-event="nav_click" data-gtm-label="Contact" class="nav-cta">Contact</a></li>
