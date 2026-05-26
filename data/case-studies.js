@@ -18,7 +18,7 @@ const caseStudies = [
     id: 1,
     title: "Adahi Al-Barakah — 37.66X ROAS Seasonal Campaign",
     industry: "E-commerce",
-    thumbnail: "assets/images/case-studies/case-01/thumb.jpg",
+    thumbnail: "assets/images/case-studies/case-01/slide-1.png",
     keyMetric: "37.66X ROAS",
     platforms: ["Meta Ads", "Google Ads", "TikTok Ads"],
     images: [
