@@ -128,7 +128,7 @@
       // Render cards
       caseStudies.forEach(function(study, index) {
         const card = document.createElement('div');
-        card.className = 'card case-study-card filter-item reveal';
+        card.className = 'card case-study-card reveal';
         card.setAttribute('data-category', study.industry.toLowerCase().replace(/\s+/g, '-'));
         card.onclick = function() { openCaseStudyModal(index); };
 
