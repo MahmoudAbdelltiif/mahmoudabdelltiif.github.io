@@ -5,7 +5,7 @@
    HOW TO CONNECT TO GOOGLE SHEETS:
    ─────────────────────────────
    1. Create a new Google Sheet
-   2. Add headers in row 1: Timestamp | Name | Email | Service | Budget | Message | Page
+   2. Add headers in row 1: Timestamp | Name | Email | Phone | Service | Budget | Message | Page
    3. Go to Extensions → Apps Script
    4. Paste this code:
 
@@ -15,6 +15,7 @@
           new Date(),
           e.parameter.name,
           e.parameter.email,
+          e.parameter.phone,
           e.parameter.service,
           e.parameter.budget,
           e.parameter.message,
@@ -43,7 +44,7 @@
   // ═══════════════════════════════════════════════
   // PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE
   // ═══════════════════════════════════════════════
-  var GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbw2fXkwZCRmExJGmzRs5-ObzfoseZI3EgDKvrMygUrEhe2JHX5Kz64SqGrxrdqdXaA02Q/exec';
+  var GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxBJJSyqlHUeAm6m7SWXTNDgyJzN5KSvRU6zKI5QjSGJ9ku7OVMm1X7oYOALdo9su_DZw/exec';
   // ═══════════════════════════════════════════════
 
   function initForm() {
@@ -99,6 +100,7 @@
       // Validation
       var nameVal = form.querySelector('[name="name"]').value.trim();
       var emailVal = form.querySelector('[name="email"]').value.trim();
+      var phoneVal = form.querySelector('[name="phone"]').value.trim();
       var messageVal = form.querySelector('[name="message"]').value.trim();
 
       if (!nameVal || !emailVal || !messageVal) {
