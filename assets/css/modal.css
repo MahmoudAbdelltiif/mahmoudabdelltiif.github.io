@@ -1,0 +1,342 @@
+/* ============================================================
+   MODAL.CSS — Case Study Modal Styles
+   ============================================================ */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 3vw, 24px);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: var(--bg-modal);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  width: clamp(320px, 90vw, 680px);
+  max-height: clamp(400px, 85vh, 90vh);
+  overflow-y: auto;
+  position: relative;
+  margin: auto;
+}
+
+.modal-close {
+  position: sticky;
+  top: 16px;
+  float: right;
+  margin-right: 16px;
+  z-index: 10;
+  width: clamp(30px, 5vw, 40px);
+  height: clamp(30px, 5vw, 40px);
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+  background: var(--blue-primary);
+  color: #fff;
+  border-color: var(--blue-primary);
+}
+
+.modal-header {
+  padding: clamp(16px, 4vw, 32px) clamp(16px, 4vw, 32px) 0;
+}
+
+.modal-header h2 {
+  font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+  margin-bottom: 4px;
+}
+
+.modal-header .modal-industry {
+  font-size: clamp(0.7rem, 1.3vw, 0.85rem);
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Image Gallery Wrapper */
+.modal-gallery-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Image Gallery */
+.modal-gallery {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  gap: 0;
+  scrollbar-width: none;
+}
+
+.modal-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-gallery img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 0;
+  background: var(--bg-card);
+  display: none;
+  max-height: clamp(200px, 40vh, 400px);
+}
+
+.modal-gallery img:first-child {
+  display: block;
+}
+
+/* Gallery Navigation Arrows */
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: clamp(30px, 5vw, 44px);
+  height: clamp(30px, 5vw, 44px);
+  border-radius: var(--radius-full);
+  background: rgba(10, 10, 15, 0.7);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.gallery-nav:hover {
+  background: var(--blue-primary);
+  border-color: var(--blue-primary);
+  color: #fff;
+}
+
+.gallery-prev {
+  left: 8px;
+}
+
+.gallery-next {
+  right: 8px;
+}
+
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 0;
+}
+
+.gallery-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.gallery-dot.active {
+  background: var(--blue-primary);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Platform Ticker in Modal */
+.modal-ticker {
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Case Study Details */
+.modal-details {
+  padding: clamp(16px, 4vw, 32px);
+}
+
+.modal-details .detail-meta {
+  display: flex;
+  gap: clamp(12px, 3vw, 24px);
+  margin-bottom: 20px;
+  font-size: clamp(0.75rem, 1.4vw, 0.9rem);
+  color: var(--text-muted);
+  flex-wrap: wrap;
+}
+
+.modal-details .detail-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modal-details h3 {
+  color: var(--blue-light);
+  margin-bottom: 10px;
+  font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+}
+
+.modal-details p,
+.modal-details li {
+  color: var(--text-secondary);
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+
+.modal-details ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+/* Results Grid */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(8px, 1.5vw, 12px);
+  margin-top: 20px;
+}
+
+.result-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-blue);
+  border-radius: var(--radius-md);
+  padding: clamp(10px, 2vw, 16px) clamp(8px, 1.5vw, 12px);
+  text-align: center;
+}
+
+.result-card .result-number {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 800;
+  color: var(--blue-light);
+  margin-bottom: 2px;
+}
+
+.result-card .result-label {
+  font-size: clamp(0.6rem, 1vw, 0.75rem);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Modal Navigation */
+.modal-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: clamp(12px, 3vw, 24px) clamp(16px, 4vw, 32px) clamp(16px, 4vw, 32px);
+  border-top: 1px solid var(--border);
+}
+
+.modal-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(4px, 1vw, 8px);
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: clamp(6px, 1.5vw, 10px) clamp(10px, 2.5vw, 20px);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(0.75rem, 1.4vw, 0.9rem);
+  transition: all var(--transition-fast);
+}
+
+.modal-nav-btn:hover {
+  border-color: var(--border-blue);
+  color: var(--blue-light);
+  background: var(--blue-subtle);
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: clamp(8px, 2vw, 16px);
+  }
+
+  .modal-content {
+    width: clamp(300px, 95vw, 560px);
+    max-height: 90vh;
+    border-radius: var(--radius-lg);
+  }
+
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-nav {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 8px;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-height: 92vh;
+    border-radius: var(--radius-md);
+  }
+
+  .modal-header h2 {
+    font-size: clamp(1rem, 5vw, 1.3rem);
+  }
+
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .result-card .result-number {
+    font-size: clamp(0.9rem, 4vw, 1.2rem);
+  }
+
+  .modal-nav-btn {
+    font-size: clamp(0.7rem, 3vw, 0.85rem);
+    padding: 6px 10px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .modal-content {
+    max-width: 720px;
+  }
+
+  .modal-gallery img {
+    max-height: 420px;
+  }
+}

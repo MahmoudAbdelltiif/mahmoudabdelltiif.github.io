@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Mahmoud Abdellatif — Performance Marketer & Media Buyer</title>
+  <meta name="description" content="Performance Marketer specializing in Meta Ads, Google Ads, TikTok Ads, and data-driven growth. Based in Egypt, serving regional and global brands.">
+  <link rel="canonical" href="https://mahmoudabdellatif.github.io/portfolio/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mahmoud Abdellatif — Performance Marketer">
+  <meta property="og:description" content="Performance Marketer specializing in Meta Ads, Google Ads, and data-driven growth.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/profile/og-image.jpg">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+  <!-- Header injected by header.js -->
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="glow-orb glow-orb-1"></div>
+      <div class="glow-orb glow-orb-2"></div>
+    </div>
+
+    <div class="hero-content">
+      <!-- Typed Roles -->
+      <div class="hero-roles reveal">
+        <span class="typing-text" id="typingText"></span>
+      </div>
+
+      <!-- Name with letter stagger -->
+      <h1 class="hero-name" id="heroName">
+        <!-- Letters injected by JS -->
+      </h1>
+
+      <!-- Tagline -->
+      <p class="hero-tagline reveal">
+        Data-driven performance marketer turning ad spend into measurable growth. Specializing in Meta, Google, and TikTok advertising.
+      </p>
+
+      <!-- CTAs -->
+      <div class="hero-ctas reveal">
+        <a href="case-study.html" class="btn-primary" data-gtm-event="hero_cta_click" data-gtm-label="See Case Studies">
+          See Case Studies
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="assets/docs/Mahmoud_Abdellatif_CV.pdf" class="btn-outline" download data-gtm-event="cv_download" data-gtm-label="Download CV">
+          Download CV
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        </a>
+      </div>
+
+      <!-- Stats Strip -->
+      <div class="hero-stats reveal" data-gtm-event="hero_stats_view">
+        <div class="hero-stat">
+          <div class="stat-number"><span data-counter data-target="50" data-suffix="+">0+</span></div>
+          <div class="stat-label">Campaigns</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-number"><span data-counter data-target="500" data-prefix="$" data-suffix="K+">$0K+</span></div>
+          <div class="stat-label">Ad Spend Managed</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-number"><span data-counter data-target="21" data-suffix="x+">0x+</span></div>
+          <div class="stat-label">Avg ROAS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="assets/js/tracking.js"></script>
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/footer.js"></script>
+  <script src="assets/js/transition.js"></script>
+  <script src="assets/js/reveal.js"></script>
+  <script src="assets/js/counter.js"></script>
+
+  <!-- Hero-specific: Letter stagger + typing effect -->
+  <script>
+  (function() {
+    // Letter stagger for name — group by word to prevent mid-word line breaks
+    const name = 'Mahmoud Abdellatif';
+    const heroName = document.getElementById('heroName');
+    if (heroName) {
+      const words = name.split(' ');
+      heroName.innerHTML = words.map(function(word, wi) {
+        const letters = word.split('').map(function(char, li) {
+          const delay = (wi * 9 + li) * 0.04;
+          return '<span class="stagger-letter" style="animation-delay:' + delay + 's">' + char + '</span>';
+        }).join('');
+        return '<span class="word-group">' + letters + '</span>';
+      }).join(' ');
+    }
+
+    // Typing effect for roles
+    const roles = ['Performance Marketer', 'Media Buyer', 'Growth Hacker', 'Data-Driven Strategist'];
+    const typingEl = document.getElementById('typingText');
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 80;
+
+    function typeRole() {
+      const currentRole = roles[roleIndex];
+
+      if (isDeleting) {
+        typingEl.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+        typingSpeed = 40;
+      } else {
+        typingEl.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+        typingSpeed = 80;
+      }
+
+      if (!isDeleting && charIndex === currentRole.length) {
+        typingSpeed = 2000; // Pause at end
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typingSpeed = 400; // Pause before next word
+      }
+
+      setTimeout(typeRole, typingSpeed);
+    }
+
+    typeRole();
+  })();
+  </script>
+</body>
+</html>

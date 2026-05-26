@@ -1,0 +1,335 @@
+/* ============================================================
+   CONTACT.CSS — Contact Page & Form Styles
+   ============================================================ */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: clamp(32px, 6vw, 60px);
+  padding: clamp(48px, 8vw, 80px) 0;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-info-item .info-icon {
+  width: clamp(38px, 5vw, 44px);
+  height: clamp(38px, 5vw, 44px);
+  border-radius: var(--radius-sm);
+  background: var(--blue-subtle);
+  border: 1px solid var(--border-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--blue-light);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+}
+
+.contact-info-item .info-text {
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  color: var(--text-secondary);
+}
+
+.contact-info-item .info-text a {
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.contact-info-item .info-text a:hover {
+  color: var(--blue-light);
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(6px, 1vw, 8px);
+  padding: clamp(8px, 1.5vw, 10px) clamp(14px, 2.5vw, 18px);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.social-link:hover {
+  border-color: var(--border-blue);
+  color: var(--blue-light);
+  box-shadow: 0 0 20px var(--blue-glow);
+  transform: translateY(-2px);
+}
+
+.social-link svg {
+  width: clamp(16px, 2vw, 18px);
+  height: clamp(16px, 2vw, 18px);
+  fill: currentColor;
+}
+
+.availability-card {
+  margin-top: 24px;
+  padding: clamp(14px, 2vw, 20px);
+  border-radius: var(--radius-md);
+  background: rgba(34, 197, 94, 0.05);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.availability-card .pulse-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  flex-shrink: 0;
+}
+
+.availability-card span {
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
+  color: var(--accent-green);
+  font-weight: 500;
+}
+
+/* Contact Form */
+.contact-form {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: clamp(24px, 4vw, 36px);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.form-group label .required {
+  color: var(--blue-primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: clamp(11px, 2vw, 14px) clamp(12px, 2vw, 16px);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--blue-primary);
+  box-shadow: 0 0 0 3px var(--blue-glow);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%235A5A78' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.form-group select option {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.form-group textarea {
+  min-height: clamp(100px, 18vw, 140px);
+  resize: vertical;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-submit {
+  margin-top: 8px;
+}
+
+.form-submit .btn-primary {
+  width: 100%;
+  justify-content: center;
+  padding: clamp(13px, 2vw, 16px);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+.form-submit .btn-primary .btn-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Form States */
+.form-success {
+  text-align: center;
+  padding: clamp(28px, 5vw, 40px) clamp(16px, 3vw, 20px);
+}
+
+.form-success .success-icon {
+  width: clamp(52px, 7vw, 64px);
+  height: clamp(52px, 7vw, 64px);
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.1);
+  border: 2px solid var(--accent-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: var(--accent-green);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.form-success h3 {
+  margin-bottom: 8px;
+  color: var(--accent-green);
+}
+
+.form-success p {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Small Phones (≤ 480px) ── */
+@media (max-width: 480px) {
+  .contact-layout {
+    padding: clamp(28px, 6vw, 48px) 0;
+    gap: 28px;
+  }
+
+  .contact-info {
+    gap: 14px;
+  }
+
+  .contact-info-item {
+    gap: 12px;
+  }
+
+  .contact-info-item .info-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .contact-info-item .info-text {
+    font-size: 0.85rem;
+    word-break: break-all; /* Prevent email overflow */
+  }
+
+  /* Social links: 2-per-row grid */
+  .social-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .social-link {
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .availability-card {
+    margin-top: 12px;
+    padding: 12px 16px;
+  }
+
+  .contact-form {
+    padding: clamp(16px, 4vw, 24px);
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px; /* Prevent auto-zoom on iOS */
+    padding: 12px;
+  }
+
+  .form-group textarea {
+    min-height: clamp(90px, 20vw, 120px);
+  }
+
+  .form-submit .btn-primary {
+    padding: 14px;
+    font-size: 0.95rem;
+    min-height: 50px;
+  }
+}
+
+/* ── Very Small Phones (≤ 360px) ── */
+@media (max-width: 360px) {
+  .contact-layout {
+    gap: 20px;
+  }
+
+  .social-links {
+    grid-template-columns: 1fr;
+  }
+
+  .social-link {
+    width: 100%;
+  }
+
+  .contact-form {
+    padding: 14px;
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+  }
+}
