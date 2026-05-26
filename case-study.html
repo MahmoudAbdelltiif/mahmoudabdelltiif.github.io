@@ -56,8 +56,16 @@
         <span class="modal-industry">Industry</span>
       </div>
 
-      <div class="modal-gallery">
-        <!-- Gallery images populated by JS -->
+      <div class="modal-gallery-wrapper">
+        <button class="gallery-nav gallery-prev" onclick="galleryNavigate(-1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="modal-gallery">
+          <!-- Gallery images populated by JS -->
+        </div>
+        <button class="gallery-nav gallery-next" onclick="galleryNavigate(1)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
       <div class="gallery-dots">
         <!-- Dot indicators populated by JS -->
