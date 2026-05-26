@@ -44,7 +44,7 @@
   // ═══════════════════════════════════════════════
   // PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE
   // ═══════════════════════════════════════════════
-  var GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwHShHzSX4NbTsZMD53U084DG6ySvzjpo84Cce_fXjy_OYOPu6GvHc5JoOnW3c_jhEExw/exec';
+  var GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxBJJSyqlHUeAm6m7SWXTNDgyJzN5KSvRU6zKI5QjSGJ9ku7OVMm1X7oYOALdo9su_DZw/exec';
   // ═══════════════════════════════════════════════
 
   function initForm() {
