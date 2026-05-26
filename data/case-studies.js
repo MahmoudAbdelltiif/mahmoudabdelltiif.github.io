@@ -11,7 +11,7 @@
    
    ============================================================ */
 
-const caseStudies = [
+var caseStudies = [
 
   // ── Case Study 1: Adahi Al-Barakah ──
   {
