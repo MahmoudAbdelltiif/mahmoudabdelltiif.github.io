@@ -13,6 +13,16 @@
   align-items: center;
   justify-content: center;
   padding: clamp(16px, 3vw, 24px);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .modal-content {
