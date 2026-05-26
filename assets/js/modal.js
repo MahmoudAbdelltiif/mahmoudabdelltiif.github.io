@@ -5,11 +5,33 @@
 (function() {
   'use strict';
 
-  let currentCaseIndex = 0;
-  let modalOpenTime = 0;
+  var currentCaseIndex = 0;
+  var modalOpenTime = 0;
+  var currentSlide = 0;
+
+  function showSlide(modal, slideIndex) {
+    var galleryEl = modal.querySelector('.modal-gallery');
+    var dotsEl = modal.querySelector('.gallery-dots');
+    if (!galleryEl) return;
+
+    // Hide all images, show the target
+    var images = galleryEl.querySelectorAll('img');
+    images.forEach(function(img, i) {
+      img.style.display = i === slideIndex ? 'block' : 'none';
+    });
+
+    // Update dots
+    if (dotsEl) {
+      dotsEl.querySelectorAll('.gallery-dot').forEach(function(dot, i) {
+        dot.classList.toggle('active', i === slideIndex);
+      });
+    }
+
+    currentSlide = slideIndex;
+  }
 
   function openModal(caseIndex) {
-    const modal = document.getElementById('caseStudyModal');
+    var modal = document.getElementById('caseStudyModal');
     if (!modal) return;
 
     // Check if case studies data is available
@@ -18,37 +40,53 @@
     }
 
     currentCaseIndex = caseIndex;
+    currentSlide = 0;
     modalOpenTime = Date.now();
 
-    const study = window.caseStudies[caseIndex];
+    var study = window.caseStudies[caseIndex];
     if (!study) return;
 
     // Populate modal
-    const titleEl = modal.querySelector('.modal-title');
-    const industryEl = modal.querySelector('.modal-industry');
-    const galleryEl = modal.querySelector('.modal-gallery');
-    const dotsEl = modal.querySelector('.gallery-dots');
-    const challengeEl = modal.querySelector('.modal-challenge');
-    const strategyEl = modal.querySelector('.modal-strategy');
-    const resultsEl = modal.querySelector('.results-grid');
-    const platformsEl = modal.querySelector('.ticker-track');
+    var titleEl = modal.querySelector('.modal-title');
+    var industryEls = modal.querySelectorAll('.modal-industry');
+    var galleryEl = modal.querySelector('.modal-gallery');
+    var dotsEl = modal.querySelector('.gallery-dots');
+    var challengeEl = modal.querySelector('.modal-challenge');
+    var strategyEl = modal.querySelector('.modal-strategy');
+    var resultsEl = modal.querySelector('.results-grid');
 
     if (titleEl) titleEl.textContent = study.title;
-    if (industryEl) industryEl.textContent = study.industry;
+    industryEls.forEach(function(el) { el.textContent = study.industry; });
 
     // Gallery
-    if (galleryEl && study.images) {
-      galleryEl.innerHTML = study.images.map(function(img) {
-        return '<img src="' + img + '" alt="' + study.title + '" loading="lazy">';
+    if (galleryEl && study.images && study.images.length > 0) {
+      galleryEl.innerHTML = study.images.map(function(img, i) {
+        return '<img src="' + img + '" alt="' + study.title + ' - Image ' + (i + 1) + '" loading="lazy" data-slide="' + i + '">';
       }).join('');
+    } else if (galleryEl) {
+      galleryEl.innerHTML = '';
     }
 
     // Dots
-    if (dotsEl && study.images) {
+    if (dotsEl && study.images && study.images.length > 1) {
       dotsEl.innerHTML = study.images.map(function(_, i) {
         return '<button class="gallery-dot' + (i === 0 ? ' active' : '') + '" data-index="' + i + '"></button>';
       }).join('');
+      dotsEl.style.display = '';
+    } else if (dotsEl) {
+      dotsEl.innerHTML = '';
+      dotsEl.style.display = 'none';
     }
+
+    // Show/hide gallery arrows
+    var prevBtn = modal.querySelector('.gallery-prev');
+    var nextBtn = modal.querySelector('.gallery-next');
+    var hasMultiple = study.images && study.images.length > 1;
+    if (prevBtn) prevBtn.style.display = hasMultiple ? '' : 'none';
+    if (nextBtn) nextBtn.style.display = hasMultiple ? '' : 'none';
+
+    // Show first slide
+    showSlide(modal, 0);
 
     // Challenge
     if (challengeEl) challengeEl.textContent = study.challenge || '';
@@ -60,19 +98,21 @@
       }).join('');
     }
 
-    // Results
+    // Results — directly set the numbers
     if (resultsEl && study.results) {
       resultsEl.innerHTML = study.results.map(function(r) {
-        return '<div class="result-card"><div class="result-number" data-counter data-target="' + r.value + '" data-suffix="' + (r.suffix || '') + '" data-prefix="' + (r.prefix || '') + '">' + (r.prefix || '') + '0' + (r.suffix || '') + '</div><div class="result-label">' + r.label + '</div></div>';
+        var displayValue = (r.prefix || '') + r.value + (r.suffix || '');
+        return '<div class="result-card"><div class="result-number">' + displayValue + '</div><div class="result-label">' + r.label + '</div></div>';
       }).join('');
-
-      // Re-init counters for modal
-      if (typeof initCounters === 'function') initCounters();
     }
 
     // Show modal
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    // Scroll modal content to top
+    var modalContent = modal.querySelector('.modal-content');
+    if (modalContent) modalContent.scrollTop = 0;
 
     // Tracking
     if (typeof trackEvent === 'function') {
@@ -84,10 +124,10 @@
   }
 
   function closeModal() {
-    const modal = document.getElementById('caseStudyModal');
+    var modal = document.getElementById('caseStudyModal');
     if (!modal) return;
 
-    const study = window.caseStudies ? window.caseStudies[currentCaseIndex] : null;
+    var study = window.caseStudies ? window.caseStudies[currentCaseIndex] : null;
 
     modal.classList.remove('active');
     document.body.style.overflow = '';
@@ -103,8 +143,8 @@
   function navigateModal(direction) {
     if (typeof window.caseStudies === 'undefined' || !window.caseStudies.length) return;
 
-    const fromStudy = window.caseStudies[currentCaseIndex];
-    let newIndex = currentCaseIndex + direction;
+    var fromStudy = window.caseStudies[currentCaseIndex];
+    var newIndex = currentCaseIndex + direction;
 
     if (newIndex < 0) newIndex = window.caseStudies.length - 1;
     if (newIndex >= window.caseStudies.length) newIndex = 0;
@@ -120,46 +160,45 @@
     }
   }
 
+  // Gallery navigation
+  function galleryNavigate(direction) {
+    var modal = document.getElementById('caseStudyModal');
+    if (!modal) return;
+
+    var study = window.caseStudies ? window.caseStudies[currentCaseIndex] : null;
+    if (!study || !study.images) return;
+
+    var totalSlides = study.images.length;
+    var newSlide = currentSlide + direction;
+
+    if (newSlide < 0) newSlide = totalSlides - 1;
+    if (newSlide >= totalSlides) newSlide = 0;
+
+    showSlide(modal, newSlide);
+  }
+
   // Expose functions globally
   window.openCaseStudyModal = openModal;
   window.closeCaseStudyModal = closeModal;
   window.navigateCaseStudy = navigateModal;
+  window.galleryNavigate = galleryNavigate;
 
   // Close on ESC
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeModal();
-    if (e.key === 'ArrowLeft') navigateModal(-1);
-    if (e.key === 'ArrowRight') navigateModal(1);
   });
 
-  // Close on overlay click
+  // Close on overlay click & gallery dot click
   document.addEventListener('click', function(e) {
     if (e.target.classList.contains('modal-overlay')) {
       closeModal();
     }
-  });
-
-  // Gallery scroll — update dots
-  document.addEventListener('scroll', function(e) {
-    const gallery = e.target.closest('.modal-gallery');
-    if (!gallery) return;
-
-    const dots = gallery.parentElement.querySelector('.gallery-dots');
-    if (!dots) return;
-
-    const scrollLeft = gallery.scrollLeft;
-    const itemWidth = gallery.querySelector('img') ? gallery.querySelector('img').offsetWidth + 12 : 1;
-    const activeIndex = Math.round(scrollLeft / itemWidth);
-
-    dots.querySelectorAll('.gallery-dot').forEach(function(dot, i) {
-      dot.classList.toggle('active', i === activeIndex);
-    });
-
-    if (typeof trackEvent === 'function') {
-      trackEvent('case_study_image_scroll', {
-        image_index: activeIndex
-      });
+    // Gallery dot click
+    if (e.target.classList.contains('gallery-dot')) {
+      var index = parseInt(e.target.getAttribute('data-index'), 10);
+      var modal = document.getElementById('caseStudyModal');
+      if (modal) showSlide(modal, index);
     }
-  }, true);
+  });
 
 })();
