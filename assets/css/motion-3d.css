@@ -1,0 +1,173 @@
+/* ============================================================
+   MOTION-3D.CSS — UI/UX motion system (loaded LAST on index.html)
+   Applies UI-UX-Pro-Max guidance to the single page:
+   3D scroll reveals · press feedback · focus rings · reduced-motion
+   Only transform/opacity are animated (GPU-friendly).
+   ============================================================ */
+
+/* ── 3D scroll reveals ──────────────────────────────────────
+   Upgrade the existing reveal classes to rise in 3D from below.
+   reveal.js still toggles `.revealed` and sets a stagger delay. */
+.reveal {
+  opacity: 0;
+  transform: perspective(1300px) rotateX(12deg) translateY(46px);
+  transform-origin: 50% 100%;
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: perspective(1300px) rotateX(0deg) translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: perspective(1300px) rotateY(-14deg) translateX(-46px);
+  transform-origin: 0% 50%;
+  transition:
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.revealed {
+  opacity: 1;
+  transform: perspective(1300px) rotateY(0deg) translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: perspective(1300px) rotateY(14deg) translateX(46px);
+  transform-origin: 100% 50%;
+  transition:
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-right.revealed {
+  opacity: 1;
+  transform: perspective(1300px) rotateY(0deg) translateX(0);
+}
+
+/* ── Per-grid stagger ───────────────────────────────────────
+   Cascade grid children (skill: stagger-sequence 30–50ms).
+   !important overrides reveal.js's inline transition-delay. */
+.services-grid > .reveal:nth-child(1),
+.certifications-grid > .reveal:nth-child(1),
+.skills-tags-section > .reveal:nth-child(2) { transition-delay: 0.05s !important; }
+.services-grid > .reveal:nth-child(2),
+.certifications-grid > .reveal:nth-child(2) { transition-delay: 0.12s !important; }
+.services-grid > .reveal:nth-child(3),
+.certifications-grid > .reveal:nth-child(3) { transition-delay: 0.19s !important; }
+.certifications-grid > .reveal:nth-child(4) { transition-delay: 0.26s !important; }
+.certifications-grid > .reveal:nth-child(5) { transition-delay: 0.33s !important; }
+
+/* ── Press / tap feedback (skill: scale-feedback 0.95–1.05) ── */
+.btn-primary,
+.btn-outline,
+.nav-cta,
+.filter-tab,
+.social-link,
+.social-icon,
+.cs-gallery-btn,
+.cs-dot,
+.back-to-top {
+  transition:
+    transform 0.16s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    color var(--transition-base);
+}
+
+.btn-primary:active,
+.btn-outline:active,
+.nav-cta:active,
+.filter-tab:active,
+.social-link:active,
+.social-icon:active,
+.cs-gallery-btn:active,
+.back-to-top:active {
+  transform: scale(0.95);
+}
+
+.card:active { transform: scale(0.99); }
+
+/* Hover lift for actionable list items that lacked it */
+.contact-info-item {
+  transition: transform var(--transition-base);
+}
+.contact-info-item:hover { transform: translateX(4px); }
+
+/* ── Accessibility: visible focus rings (skill §1 focus-states) ── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.filter-tab:focus-visible,
+.cs-dot:focus-visible {
+  outline: 2px solid var(--blue-light);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+/* Don't double up: inputs already show their own focus ring */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline-offset: 1px;
+}
+
+/* Skip-link for keyboard users (skill §1 skip-links) */
+.skip-to-content {
+  position: absolute;
+  left: 50%;
+  top: -60px;
+  transform: translateX(-50%);
+  z-index: 10000;
+  padding: 10px 20px;
+  background: var(--blue-primary);
+  color: #fff;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-to-content:focus {
+  top: 12px;
+}
+
+/* ── Section rhythm / depth cue between anchored sections ── */
+.section-anchor + .section-anchor {
+  position: relative;
+}
+
+/* ── Reduced motion: flatten everything (skill §1 reduced-motion) ── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .btn-primary:active,
+  .btn-outline:active,
+  .nav-cta:active,
+  .filter-tab:active,
+  .card:active,
+  .social-link:active,
+  .social-icon:active {
+    transform: none;
+  }
+  .contact-info-item:hover { transform: none; }
+}
+
+/* ── Touch / small screens: soften the 3D so it never feels heavy ── */
+@media (max-width: 1023px) {
+  .reveal { transform: translateY(34px); }
+  .reveal.revealed { transform: none; }
+  .reveal-left { transform: translateX(-28px); }
+  .reveal-left.revealed { transform: none; }
+  .reveal-right { transform: translateX(28px); }
+  .reveal-right.revealed { transform: none; }
+}
