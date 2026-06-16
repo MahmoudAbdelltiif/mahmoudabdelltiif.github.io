@@ -76,46 +76,116 @@
     });
   }
 
-  /* ── 3D Card Tilt (desktop, no reduced-motion) ── */
+  /* ── 3D Card Tilt + Glare (desktop, no reduced-motion) ── */
   function initCardTilt() {
     if (!isDesktop || prefersReduced) return;
 
+    var MAX = 11; // max tilt in degrees — stronger 3D
+
     function tiltCard(card) {
+      if (card.dataset.tiltBound) return;
+      card.dataset.tiltBound = '1';
+
+      /* Inject a glare layer that follows the pointer */
+      var glare = document.createElement('div');
+      glare.className = 'card-glare';
+      card.appendChild(glare);
+
+      card.addEventListener('mouseenter', function () {
+        card.classList.remove('tilt-reset');
+        card.classList.add('is-tilting');
+      });
+
       card.addEventListener('mousemove', function (e) {
         var rect = card.getBoundingClientRect();
         var x = e.clientX - rect.left;
         var y = e.clientY - rect.top;
         var cx = rect.width / 2;
         var cy = rect.height / 2;
-        var rotX = ((y - cy) / cy) * -7;
-        var rotY = ((x - cx) / cx) * 7;
+        var rotX = ((y - cy) / cy) * -MAX;
+        var rotY = ((x - cx) / cx) * MAX;
         card.style.transform =
-          'translateY(-8px) perspective(1000px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)';
-        card.style.setProperty('--mouse-x', ((x / rect.width) * 100) + '%');
-        card.style.setProperty('--mouse-y', ((y / rect.height) * 100) + '%');
+          'perspective(900px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg) translateY(-10px) scale(1.015)';
+        /* radial inner-glow (::before) and glare track the pointer */
+        var px = (x / rect.width) * 100;
+        var py = (y / rect.height) * 100;
+        card.style.setProperty('--mouse-x', px + '%');
+        card.style.setProperty('--mouse-y', py + '%');
+        card.style.setProperty('--glare-x', px + '%');
+        card.style.setProperty('--glare-y', py + '%');
       });
 
       card.addEventListener('mouseleave', function () {
+        card.classList.add('tilt-reset');
+        card.classList.remove('is-tilting');
         card.style.transform = '';
-        card.style.transition =
-          'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.3s ease';
-        setTimeout(function () { card.style.transition = ''; }, 500);
-      });
-
-      card.addEventListener('mouseenter', function () {
-        card.style.transition = 'none';
       });
     }
 
-    /* Apply tilt to all cards — re-run after header/footer injected */
+    /* Apply tilt to all cards — re-run after components render late */
     function attachTilt() {
       document.querySelectorAll('.card, .platform-card, .cert-card').forEach(tiltCard);
     }
 
     attachTilt();
-
-    /* Re-attach after a short delay in case components render late */
     setTimeout(attachTilt, 600);
+  }
+
+  /* ── Hero 3D Scene — mouse-driven parallax + tilt ── */
+  function initHero3D() {
+    if (prefersReduced) return;
+    var hero = document.querySelector('.hero');
+    var scene = document.querySelector('.hero-content[data-tilt-scene]');
+    var orbs = document.querySelectorAll('.hero-bg .glow-orb, .hero-bg .hero-grid');
+    if (!hero) return;
+
+    var targetRX = 0, targetRY = 0, curRX = 0, curRY = 0;
+    var pointerX = 0, pointerY = 0;
+    var active = false;
+    var raf;
+
+    hero.addEventListener('mousemove', function (e) {
+      if (!isDesktop) return;
+      var rect = hero.getBoundingClientRect();
+      var nx = (e.clientX - rect.left) / rect.width - 0.5;  // -0.5 .. 0.5
+      var ny = (e.clientY - rect.top) / rect.height - 0.5;
+      pointerX = nx;
+      pointerY = ny;
+      targetRY = nx * 10;   // rotateY follows horizontal
+      targetRX = -ny * 10;  // rotateX follows vertical
+      if (!active) { active = true; loop(); }
+    });
+
+    hero.addEventListener('mouseleave', function () {
+      targetRX = 0; targetRY = 0; pointerX = 0; pointerY = 0;
+    });
+
+    function loop() {
+      curRX += (targetRX - curRX) * 0.08;
+      curRY += (targetRY - curRY) * 0.08;
+
+      if (scene) {
+        scene.style.transform =
+          'perspective(1100px) rotateX(' + curRX + 'deg) rotateY(' + curRY + 'deg)';
+      }
+      /* orbs drift opposite to the pointer for depth (kept additive with scroll) */
+      orbs.forEach(function (orb, i) {
+        var depth = parseFloat(orb.getAttribute('data-depth')) || (i + 1);
+        var sx = -pointerX * depth * 18;
+        var sy = -pointerY * depth * 18;
+        orb.style.setProperty('--px', sx + 'px');
+        orb.style.setProperty('--py', sy + 'px');
+        orb.style.transform = 'translate3d(' + sx + 'px,' + (sy + (orb._scrollY || 0)) + 'px, 0)';
+      });
+
+      if (Math.abs(targetRX - curRX) < 0.01 && Math.abs(targetRY - curRY) < 0.01 &&
+          pointerX === 0 && pointerY === 0) {
+        if (scene) scene.style.transform = 'perspective(1100px) rotateX(0deg) rotateY(0deg)';
+        active = false;
+        return;
+      }
+      raf = requestAnimationFrame(loop);
+    }
   }
 
   /* ── Mouse-tracked Inner Glow on Cards ── */
@@ -131,7 +201,9 @@
     }, { passive: true });
   }
 
-  /* ── Hero Orb Parallax ── */
+  /* ── Hero Orb Scroll Parallax ── */
+  /* Stores the scroll offset on each orb; the hero-3D loop combines it with
+     pointer offset. When the 3D loop is idle, we apply scroll-only here. */
   function initParallax() {
     if (prefersReduced) return;
     var orbs = document.querySelectorAll('.hero-bg .glow-orb');
@@ -144,7 +216,9 @@
           var y = window.scrollY;
           orbs.forEach(function (orb, i) {
             var speed = (i + 1) * 0.25;
-            orb.style.transform = 'translateY(' + (y * speed) + 'px)';
+            orb._scrollY = y * speed;
+            var px = parseFloat(orb.style.getPropertyValue('--px')) || 0;
+            orb.style.transform = 'translate3d(' + px + 'px,' + (orb._scrollY) + 'px,0)';
           });
           ticking = false;
         });
@@ -216,6 +290,7 @@
     initCardTilt();
     initCardMouseGlow();
     initParallax();
+    initHero3D();
     ensurePageHeroGrid();
     initHeroNameGradient();
   });

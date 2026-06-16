@@ -1163,3 +1163,140 @@ img, video, svg {
     display: none !important;
   }
 }
+
+/* ============================================================
+   SINGLE-PAGE LAYOUT + 3D DEPTH
+   ============================================================ */
+
+/* ── In-page anchor offset for the sticky header ── */
+.section-anchor {
+  scroll-margin-top: 84px;
+  position: relative;
+}
+
+/* Alternating section background for rhythm on the single page */
+.section-anchor:nth-of-type(even) {
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(37, 99, 235, 0.05), transparent 60%),
+    var(--bg-secondary);
+}
+
+/* Eyebrow label inside section titles */
+.section-title .section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: clamp(0.7rem, 1.3vw, 0.8rem);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue-light);
+}
+
+.section-title .section-label::before {
+  content: '';
+  width: 28px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--gradient-primary);
+}
+
+/* JS sets the perspective inside the inline transform string, so we don't
+   promote every card to a permanent GPU layer (that tanks compositing on a
+   long single page). will-change is added only while hovering, via .is-tilting. */
+.card.is-tilting {
+  will-change: transform;
+}
+
+/* Smooth return when the pointer leaves */
+.tilt-reset {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* ── Glare / shine that follows the pointer across a card ── */
+.card-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    220px circle at var(--glare-x, 50%) var(--glare-y, 50%),
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0.03) 35%,
+    transparent 60%
+  );
+}
+
+.card:hover .card-glare {
+  opacity: 1;
+}
+
+/* ── Depth layers pop toward the viewer on hover ── */
+[data-depth-layer] {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
+  transform: translateZ(0);
+}
+
+.card:hover [data-depth-layer],
+.platform-card:hover [data-depth-layer],
+.cert-card:hover [data-depth-layer] {
+  transform: translateZ(40px) translateY(-4px) scale(1.08);
+}
+
+/* ── Hero 3D scene ── */
+.hero-content[data-tilt-scene] {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.hero-content[data-tilt-scene] > * {
+  transform: translateZ(0);
+}
+
+/* push layers forward at varying depths — parallax depth.
+   NOTE: .hero-name is intentionally excluded — it uses background-clip:text
+   for its gradient, and an own translateZ can break text-clip rasterization
+   in Chromium. It still gains depth from the parent's 3D rotation. */
+.hero-content[data-tilt-scene] .hero-roles { transform: translateZ(40px); }
+.hero-content[data-tilt-scene] .hero-tagline { transform: translateZ(28px); }
+.hero-content[data-tilt-scene] .hero-ctas { transform: translateZ(34px); }
+.hero-content[data-tilt-scene] .hero-stats { transform: translateZ(18px); }
+
+/* clickable scroll indicator */
+a.hero-scroll {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-glare { display: none; }
+  [data-depth-layer] { transition: none; }
+  .hero-content[data-tilt-scene] .hero-name,
+  .hero-content[data-tilt-scene] .hero-roles,
+  .hero-content[data-tilt-scene] .hero-tagline,
+  .hero-content[data-tilt-scene] .hero-ctas,
+  .hero-content[data-tilt-scene] .hero-stats {
+    transform: none;
+  }
+}
+
+/* Touch / small screens: disable 3D tilt math for performance & usability */
+@media (max-width: 1023px) {
+  .card-glare { display: none; }
+  .card:hover [data-depth-layer],
+  .platform-card:hover [data-depth-layer],
+  .cert-card:hover [data-depth-layer] {
+    transform: none;
+  }
+  .hero-content[data-tilt-scene] .hero-name,
+  .hero-content[data-tilt-scene] .hero-roles,
+  .hero-content[data-tilt-scene] .hero-tagline,
+  .hero-content[data-tilt-scene] .hero-ctas,
+  .hero-content[data-tilt-scene] .hero-stats {
+    transform: none;
+  }
+}

@@ -97,19 +97,23 @@
       var submitBtn = form.querySelector('.btn-primary');
       var btnContent = submitBtn.querySelector('.btn-content');
 
-      // Validation
-      var nameVal = form.querySelector('[name="name"]').value.trim();
-      var emailVal = form.querySelector('[name="email"]').value.trim();
-      var phoneVal = form.querySelector('[name="phone"]').value.trim();
-      var messageVal = form.querySelector('[name="message"]').value.trim();
-
-      if (!nameVal || !emailVal || !messageVal) {
+      // Native HTML5 validation first (all fields are required)
+      if (typeof form.checkValidity === 'function' && !form.checkValidity()) {
         form.classList.add('form-error');
         setTimeout(function() { form.classList.remove('form-error'); }, 500);
+        if (typeof form.reportValidity === 'function') form.reportValidity();
         return;
       }
 
-      if (messageVal.length < 20) {
+      // Backup validation — every field is mandatory
+      var nameVal = form.querySelector('[name="name"]').value.trim();
+      var emailVal = form.querySelector('[name="email"]').value.trim();
+      var phoneVal = form.querySelector('[name="phone"]').value.trim();
+      var serviceVal = serviceSelect ? serviceSelect.value : '';
+      var budgetVal = budgetSelect ? budgetSelect.value : '';
+      var messageVal = form.querySelector('[name="message"]').value.trim();
+
+      if (!nameVal || !emailVal || !phoneVal || !serviceVal || !budgetVal || messageVal.length < 10) {
         form.classList.add('form-error');
         setTimeout(function() { form.classList.remove('form-error'); }, 500);
         return;

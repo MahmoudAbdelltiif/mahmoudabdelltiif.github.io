@@ -17,24 +17,29 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/about.css">
+  <link rel="stylesheet" href="assets/css/skills.css">
+  <link rel="stylesheet" href="assets/css/experience.css">
+  <link rel="stylesheet" href="assets/css/certifications.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
-<body>
+<body class="single-page">
 
   <!-- Header injected by header.js -->
 
   <!-- ===== HERO SECTION ===== -->
   <section class="hero" id="hero">
-    <div class="hero-bg">
-      <div class="hero-grid"></div>
-      <div class="glow-orb glow-orb-1"></div>
-      <div class="glow-orb glow-orb-2"></div>
-      <div class="glow-orb glow-orb-3"></div>
+    <div class="hero-bg" data-parallax-layer>
+      <div class="hero-grid" data-depth="0.4"></div>
+      <div class="glow-orb glow-orb-1" data-depth="2.2"></div>
+      <div class="glow-orb glow-orb-2" data-depth="1.4"></div>
+      <div class="glow-orb glow-orb-3" data-depth="3"></div>
     </div>
 
-    <div class="hero-content">
+    <div class="hero-content" data-tilt-scene>
       <!-- Typed Roles -->
       <div class="hero-roles reveal">
         <span class="typing-text" id="typingText"></span>
@@ -52,8 +57,8 @@
 
       <!-- CTAs -->
       <div class="hero-ctas reveal">
-        <a href="case-study.html" class="btn-primary" data-gtm-event="hero_cta_click" data-gtm-label="See Case Studies">
-          See Case Studies
+        <a href="#contact" class="btn-primary" data-gtm-event="hero_cta_click" data-gtm-label="Let's Work Together">
+          Let's Work Together
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="assets/docs/Mahmoud_Abdellatif_CV.pdf" class="btn-outline" download data-gtm-event="cv_download" data-gtm-label="Download CV">
@@ -80,22 +85,634 @@
     </div>
 
     <!-- Scroll indicator -->
-    <div class="hero-scroll">
+    <a href="#about" class="hero-scroll" aria-label="Scroll to about">
       <div class="hero-scroll-line"></div>
       <div class="hero-scroll-dot"></div>
-    </div>
+    </a>
   </section>
+
+  <main>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="section-anchor" id="about">
+      <div class="container section">
+        <div class="section-title reveal">
+          <span class="section-label">About Me</span>
+          <h2>The Story Behind <span class="title-accent">the Numbers</span></h2>
+        </div>
+
+        <div class="about-intro">
+          <div class="about-photo-wrapper reveal-left">
+            <div class="about-photo">
+              <div class="about-photo-placeholder">
+                <img src="assets/images/profile/Mahmoud.jpeg" alt="Mahmoud Abdelltiif">
+              </div>
+            </div>
+          </div>
+
+          <div class="about-info reveal-right">
+            <h2>Mahmoud Abdellatif</h2>
+            <p class="about-title">Performance Marketing Specialist</p>
+
+            <div class="about-bio">
+              <p>I'm a performance marketer passionate about leveraging data to optimize ad performance across Google Ads, Meta Ads, TikTok Ads, and Snapchat Ads platforms. My goal is to drive qualified leads and maximize ROI for every campaign I manage.</p>
+              <p>With hands-on experience in media buying, campaign strategy, and analytics, I help brands turn ad spend into measurable growth. From e-commerce to real estate, I've worked across diverse industries delivering results that matter.</p>
+              <p>Based in Egypt, I combine technical expertise in tracking and attribution with creative campaign strategies to build scalable, data-driven marketing systems.</p>
+            </div>
+
+            <div class="about-badges">
+              <div class="availability-badge">
+                <span class="pulse-dot"></span>
+                Available for Work
+              </div>
+              <span class="tag">Performance Marketing</span>
+              <span class="tag">Media Buying</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metrics Strip (full width) -->
+      <div class="metrics-strip" data-gtm-event="about_metrics_view">
+        <div class="container">
+          <div class="metrics-grid">
+            <div class="metric-item reveal">
+              <div class="metric-number"><span data-counter data-target="50" data-suffix="+">0+</span></div>
+              <div class="metric-label">Campaigns Launched</div>
+            </div>
+            <div class="metric-item reveal">
+              <div class="metric-number"><span data-counter data-target="500" data-prefix="$" data-suffix="K+">$0K+</span></div>
+              <div class="metric-label">Total Ad Spend</div>
+            </div>
+            <div class="metric-item reveal">
+              <div class="metric-number"><span data-counter data-target="3" data-suffix="">0</span></div>
+              <div class="metric-label">Countries</div>
+            </div>
+            <div class="metric-item reveal">
+              <div class="metric-number"><span data-counter data-target="21" data-suffix="x+">0x+</span></div>
+              <div class="metric-label">Avg ROAS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- What I Do -->
+      <div class="what-i-do container section">
+        <div class="section-title reveal">
+          <h2>What I <span class="title-accent">Do</span></h2>
+          <p>Full-stack performance marketing from strategy to execution</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="card service-card reveal" data-gtm-event="about_service_click" data-gtm-service="Media Buying">
+            <div class="service-icon" data-depth-layer>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>Media Buying</h3>
+            <p>End-to-end paid campaign management across Meta, Google, TikTok, and Snapchat. From audience research and creative strategy to bid optimization and scaling — every dollar is optimized for maximum return.</p>
+          </div>
+
+          <div class="card service-card reveal" data-gtm-event="about_service_click" data-gtm-service="Analytics & Tracking">
+            <div class="service-icon" data-depth-layer>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg>
+            </div>
+            <h3>Analytics & Tracking</h3>
+            <p>Server-side tracking with GTM, Meta CAPI, and GA4 implementation. I ensure every touchpoint is accurately measured so you can make confident, data-driven decisions about your marketing spend.</p>
+          </div>
+
+          <div class="card service-card reveal" data-gtm-event="about_service_click" data-gtm-service="Strategy & Consulting">
+            <div class="service-icon" data-depth-layer>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+            </div>
+            <h3>Strategy & Consulting</h3>
+            <p>Comprehensive marketing strategy development including market research, competitor analysis, media planning, and scaling frameworks. I build systems that grow sustainably, not just campaigns that spike.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+    <section class="section-anchor" id="skills">
+      <div class="container section">
+        <div class="section-title reveal">
+          <span class="section-label">Skills & Platforms</span>
+          <h2>The Tools That <span class="title-accent">Drive Results</span></h2>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs" data-filter-target=".platforms-grid">
+          <button class="filter-tab active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="paid-social">Paid Social</button>
+          <button class="filter-tab" data-filter="analytics">Analytics</button>
+          <button class="filter-tab" data-filter="ecommerce">E-commerce</button>
+          <button class="filter-tab" data-filter="tracking">Tracking</button>
+        </div>
+
+        <!-- Platforms Grid -->
+        <div class="platforms-grid">
+          <div class="card platform-card filter-item" data-category="paid-social" data-gtm-event="platform_icon_click" data-gtm-platform="Meta Ads" data-gtm-category="Paid Social">
+            <div class="platform-icon" style="color: #0081FB" data-depth-layer>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </div>
+            <div class="platform-name">Meta Ads</div>
+            <div class="platform-category">Paid Social</div>
+          </div>
+
+          <div class="card platform-card filter-item" data-category="paid-social" data-gtm-event="platform_icon_click" data-gtm-platform="TikTok Ads" data-gtm-category="Paid Social">
+            <div class="platform-icon" style="color: #000000" data-depth-layer>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </div>
+            <div class="platform-name">TikTok Ads</div>
+            <div class="platform-category">Paid Social</div>
+          </div>
+
+          <div class="card platform-card filter-item" data-category="paid-social" data-gtm-event="platform_icon_click" data-gtm-platform="Snapchat Ads" data-gtm-category="Paid Social">
+            <div class="platform-icon" style="color: #FFFC00" data-depth-layer>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12.922-.214.4-.15.891-.313 1.396-.313.314 0 .598.058.843.171.688.294.783.815.783.96 0 .642-.72 1.068-1.344 1.364-.165.076-.338.148-.503.217-.537.225-1.078.452-1.3.736-.111.141-.136.352-.136.488 0 .146.028.294.084.44.302.747.892 1.376 1.472 1.986.247.26.491.518.714.784.57.686.835 1.3.835 1.596 0 .278-.195.718-.741.913a5.615 5.615 0 01-1.822.308c-.228 0-.43-.017-.606-.05-.296-.05-.539-.158-.81-.283a2.946 2.946 0 00-.41-.163c-.141-.04-.293-.061-.447-.061-.237 0-.472.047-.678.108a3.76 3.76 0 00-.543.217c-.329.164-.665.342-1.101.342-.053 0-.107-.003-.162-.009a2.483 2.483 0 01-.148-.022c-.327-.06-.632-.204-.96-.36-.316-.148-.661-.312-1.063-.39a2.802 2.802 0 00-.532-.051c-.368 0-.728.07-1.048.182-.327.108-.603.258-.882.412-.278.153-.562.305-.89.384a2.434 2.434 0 01-.578.07c-.432 0-.797-.168-1.164-.362-.253-.133-.51-.265-.797-.348a2.055 2.055 0 00-.577-.082c-.378 0-.72.098-1.04.215a3.85 3.85 0 00-.578.275c-.269.15-.516.276-.818.326a2.614 2.614 0 01-.438.038c-.585 0-1.284-.118-1.692-.32-.435-.214-.595-.558-.595-.89 0-.295.258-.889.817-1.56.218-.26.462-.513.707-.77.594-.617 1.193-1.248 1.502-2 .06-.15.09-.305.09-.459a.926.926 0 00-.121-.466c-.21-.289-.74-.513-1.264-.737a7.487 7.487 0 01-.476-.206C1.357 12.766.637 12.344.637 11.7c0-.16.1-.66.773-.94a2.96 2.96 0 011.117-.233c.488 0 .938.143 1.308.293.263.102.568.21.84.21.186 0 .316-.04.392-.08a14.29 14.29 0 01-.034-.563c-.103-1.626-.227-3.65.3-4.838C7.003 1.048 10.337.793 12.207.793z"/></svg>
+            </div>
+            <div class="platform-name">Snapchat Ads</div>
+            <div class="platform-category">Paid Social</div>
+          </div>
+
+          <div class="card platform-card filter-item" data-category="paid-social" data-gtm-event="platform_icon_click" data-gtm-platform="Google Ads" data-gtm-category="Paid Search">
+            <div class="platform-icon" data-depth-layer>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="platform-name">Google Ads</div>
+            <div class="platform-category">Paid Search</div>
+          </div>
+
+          <div class="card platform-card filter-item" data-category="analytics" data-gtm-event="platform_icon_click" data-gtm-platform="GA4" data-gtm-category="Analytics">
+            <div class="platform-icon" style="color: #E37400" data-depth-layer>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 3v18H8v-3.28a2 2 0 10-2 0V21H0V3h6v3.28a2 2 0 102 0V3h12zm-2 2H9.44A4.014 4.014 0 018 6.56 4.014 4.014 0 016.56 5H2v14h4.56A4.014 4.014 0 018 17.44 4.014 4.014 0 019.44 19H18V5z"/></svg>
+            </div>
+            <div class="platform-name">GA4</div>
+            <div class="platform-category">Analytics</div>
+          </div>
+
+          <div class="card platform-card filter-item" data-category="analytics" data-gtm-event="platform_icon_click" data-gtm-platform="GTM" data-gtm-category="Analytics">
+            <div class="platform-icon" style="color: #4285F4" data-depth-layer>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1.5 7.5 12 13l10.5-5.5L12 2zm0 2.18l6.3 3.32L12 10.82 5.7 7.5 12 4.18zM1.5 12L12 17.5 22.5 12 12 7.5 1.5 12zm3.36 0L12 15.32 19.14 12 12 8.68 4.86 12zM1.5 16.5L12 22l10.5-5.5L12 11 1.5 16.5zm3.36 0L12 19.82 19.14 16.5 12 13.18 4.86 16.5z"/></svg>
+            </div>
+            <div class="platform-name">GTM</div>
+            <div class="platform-category">Analytics</div>
+          </div>
+
+          <div class="card platform-card filter-item" data-category="analytics" data-gtm-event="platform_icon_click" data-gtm-platform="Looker Studio" data-gtm-category="Analytics">
+            <div class="platform-icon" style="color: #4285F4" data-depth-layer>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            </div>
+            <div class="platform-name">Looker Studio</div>
+            <div class="platform-category">Analytics</div>
+          </div>
+
+          <div class="card platform-card filter-item" data-category="analytics" data-gtm-event="platform_icon_click" data-gtm-platform="Microsoft Clarity" data-gtm-category="Analytics">
+            <div class="platform-icon" style="color: #7B83EB" data-depth-layer>
+              <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3" fill="#0A0A0F"/></svg>
+            </div>
+            <div class="platform-name">Microsoft Clarity</div>
+            <div class="platform-category">Analytics</div>
+          </div>
+
+          <div class="card platform-card filter-item" data-category="analytics" data-gtm-event="platform_icon_click" data-gtm-platform="Power BI" data-gtm-category="Analytics">
+            <div class="platform-icon" style="color: #F2C811" data-depth-layer>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1 3h6v18H1V3zm8 5h6v13H9V8zm8-3h6v16h-6V5z"/></svg>
+            </div>
+            <div class="platform-name">Power BI</div>
+            <div class="platform-category">Analytics</div>
+          </div>
+
+          <div class="card platform-card filter-item" data-category="ecommerce" data-gtm-event="platform_icon_click" data-gtm-platform="WooCommerce" data-gtm-category="E-commerce">
+            <div class="platform-icon" style="color: #96588A" data-depth-layer>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 2v20h20V2H2zm9.65 14.55c-.47.47-1.11.73-1.77.73-.68 0-1.3-.26-1.77-.73-.47-.47-.73-1.1-.73-1.77s.26-1.3.73-1.77c.47-.47 1.09-.73 1.77-.73.66 0 1.3.26 1.77.73.47.47.73 1.1.73 1.77s-.26 1.3-.73 1.77zm5.66 0c-.47.47-1.11.73-1.77.73-.68 0-1.3-.26-1.77-.73-.47-.47-.73-1.1-.73-1.77s.26-1.3.73-1.77c.47-.47 1.09-.73 1.77-.73.66 0 1.3.26 1.77.73.47.47.73 1.1.73 1.77s-.26 1.3-.73 1.77z"/></svg>
+            </div>
+            <div class="platform-name">WooCommerce</div>
+            <div class="platform-category">E-commerce</div>
+          </div>
+
+          <div class="card platform-card filter-item" data-category="ecommerce" data-gtm-event="platform_icon_click" data-gtm-platform="Salla" data-gtm-category="E-commerce">
+            <div class="platform-icon" style="color: #E8533F" data-depth-layer>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+            </div>
+            <div class="platform-name">Salla</div>
+            <div class="platform-category">E-commerce</div>
+          </div>
+
+          <div class="card platform-card filter-item" data-category="ecommerce" data-gtm-event="platform_icon_click" data-gtm-platform="Zid" data-gtm-category="E-commerce">
+            <div class="platform-icon" style="color: #4BC8F0" data-depth-layer>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z"/></svg>
+            </div>
+            <div class="platform-name">Zid</div>
+            <div class="platform-category">E-commerce</div>
+          </div>
+
+          <div class="card platform-card filter-item" data-category="tracking" data-gtm-event="platform_icon_click" data-gtm-platform="Server-Side GTM" data-gtm-category="Tracking">
+            <div class="platform-icon" style="color: #4285F4" data-depth-layer>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 13H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1zM7 19c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM20 3H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zM7 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+            </div>
+            <div class="platform-name">Server-Side GTM</div>
+            <div class="platform-category">Tracking</div>
+          </div>
+        </div>
+
+        <!-- Skill Sets -->
+        <div class="skills-tags-section">
+          <div class="section-title reveal">
+            <h2>Skill <span class="title-accent">Sets</span></h2>
+          </div>
+
+          <div class="skills-group reveal">
+            <h3>Advertising Platforms</h3>
+            <div class="skills-tags">
+              <span class="tag tag-platform">Google Ads</span>
+              <span class="tag tag-platform">Meta Ads</span>
+              <span class="tag tag-platform">TikTok Ads</span>
+              <span class="tag tag-platform">Snapchat Ads</span>
+              <span class="tag tag-platform">Pinterest Ads</span>
+            </div>
+          </div>
+
+          <div class="skills-group reveal">
+            <h3>Tracking & Optimization</h3>
+            <div class="skills-tags">
+              <span class="tag">GTM</span>
+              <span class="tag">Server-Side GTM</span>
+              <span class="tag">Retargeting</span>
+              <span class="tag">Lookalike Audiences</span>
+              <span class="tag">Automation Flows</span>
+            </div>
+          </div>
+
+          <div class="skills-group reveal">
+            <h3>Analytics & Visualization</h3>
+            <div class="skills-tags">
+              <span class="tag">Google Analytics 4</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">Google Looker Studio</span>
+              <span class="tag">Microsoft Clarity</span>
+              <span class="tag">Tableau</span>
+            </div>
+          </div>
+
+          <div class="skills-group reveal">
+            <h3>Soft Skills</h3>
+            <div class="skills-tags">
+              <span class="tag">Leadership</span>
+              <span class="tag">Communication</span>
+              <span class="tag">Problem Solving</span>
+              <span class="tag">Data-Driven Decision Making</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE SECTION ===== -->
+    <section class="section-anchor" id="experience">
+      <div class="container section">
+        <div class="section-title reveal">
+          <span class="section-label">Experience</span>
+          <h2>My Professional <span class="title-accent">Journey</span></h2>
+        </div>
+
+        <div class="timeline">
+          <!-- Entry 1: Current Role -->
+          <div class="timeline-entry current" data-gtm-event="experience_entry_view" data-gtm-company="Efadh" data-gtm-role="Performance Marketing">
+            <div class="timeline-content">
+              <div class="company-logo">
+                <span class="logo-placeholder">E</span>
+              </div>
+              <h3>Performance Marketing</h3>
+              <div class="company-name">Efadh</div>
+              <div class="duration">07/2025 – Present</div>
+              <div class="location">Mansoura, Egypt</div>
+              <ul class="achievements">
+                <li>Lead the technical marketing team, overseeing campaign setup, tracking, and optimization across all digital platforms</li>
+                <li>Support the sales team by launching and managing lead generation campaigns aimed at attracting new clients</li>
+                <li>Develop and execute data-driven marketing strategies to improve lead quality and reduce CPA</li>
+                <li>Analyze campaign data using Google Ads, Meta Ads Manager, and CRM tools to identify growth opportunities</li>
+                <li>Implement retargeting, lookalike, and automation flows to boost conversion rates</li>
+                <li>Manage campaign budgets efficiently to maximize ROI and sustain continuous business growth</li>
+              </ul>
+              <div class="entry-tags">
+                <span class="tag tag-platform">Google Ads</span>
+                <span class="tag tag-platform">Meta Ads</span>
+                <span class="tag tag-metric">Lead Gen</span>
+                <span class="tag tag-industry">Multi-Industry</span>
+              </div>
+            </div>
+            <div class="timeline-spacer"></div>
+          </div>
+
+          <!-- Entry 2: Sapaq -->
+          <div class="timeline-entry" data-gtm-event="experience_entry_view" data-gtm-company="Sapaq" data-gtm-role="Media Buyer">
+            <div class="timeline-spacer"></div>
+            <div class="timeline-content">
+              <div class="company-logo">
+                <span class="logo-placeholder">S</span>
+              </div>
+              <h3>Media Buyer</h3>
+              <div class="company-name">Sapaq</div>
+              <div class="duration">01/2025 – 07/2025</div>
+              <div class="location">Mansoura, Egypt</div>
+              <ul class="achievements">
+                <li>Conducted in-depth market research and competitor analysis to identify opportunities and optimize strategies</li>
+                <li>Developed and executed data-driven media plans across Meta Ads, Snapchat Ads, Google Ads, and TikTok Ads</li>
+                <li>Identified trending products and strategically added them to the store to drive sales</li>
+                <li>Planned and prepared compelling creatives for ad campaigns to boost engagement and conversions</li>
+                <li>Utilized Google Analytics and Microsoft Clarity to track, analyze, and enhance campaign performance</li>
+                <li>Scaled campaigns using horizontal and vertical scaling strategies while optimizing bidding and audience segmentation</li>
+                <li>Deployed dynamic retargeting ads and lookalike audiences to boost conversions and retention</li>
+              </ul>
+              <div class="entry-tags">
+                <span class="tag tag-platform">Meta Ads</span>
+                <span class="tag tag-platform">Snapchat Ads</span>
+                <span class="tag tag-platform">TikTok Ads</span>
+                <span class="tag tag-platform">Google Ads</span>
+                <span class="tag tag-metric">ROI</span>
+                <span class="tag tag-industry">E-commerce</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entry 3: Elbatt & Sapaq Intern -->
+          <div class="timeline-entry" data-gtm-event="experience_entry_view" data-gtm-company="Elbatt & Sapaq" data-gtm-role="Marketing & Media Buying Intern">
+            <div class="timeline-content">
+              <div class="company-logo">
+                <span class="logo-placeholder">ES</span>
+              </div>
+              <h3>Marketing & Media Buying Intern</h3>
+              <div class="company-name">Elbatt & Sapaq</div>
+              <div class="duration">10/2024 – 01/2025</div>
+              <div class="location">Mansoura, Egypt</div>
+              <ul class="achievements">
+                <li>Managed campaigns on Google Ads, Facebook Ads, Snapchat Ads, and TikTok Ads platforms</li>
+                <li>Performed campaign performance analysis using Google Analytics and Microsoft Clarity</li>
+                <li>Optimized website conversions through data-driven strategies</li>
+                <li>Developed expertise in tracking (GTM), scaling, and retargeting strategies</li>
+              </ul>
+              <div class="entry-tags">
+                <span class="tag tag-platform">Google Ads</span>
+                <span class="tag tag-platform">Facebook Ads</span>
+                <span class="tag tag-platform">GTM</span>
+                <span class="tag tag-industry">Multi-Platform</span>
+              </div>
+            </div>
+            <div class="timeline-spacer"></div>
+          </div>
+
+          <!-- Entry 4: Freelance Data Analyst -->
+          <div class="timeline-entry" data-gtm-event="experience_entry_view" data-gtm-company="Freelance" data-gtm-role="Data Analyst">
+            <div class="timeline-spacer"></div>
+            <div class="timeline-content">
+              <div class="company-logo">
+                <span class="logo-placeholder">DA</span>
+              </div>
+              <h3>Data Analyst (Freelance)</h3>
+              <div class="company-name">Freelance</div>
+              <div class="duration">2023</div>
+              <div class="location">Remote</div>
+              <ul class="achievements">
+                <li>Conducted advanced data analysis and built dashboards using Power BI and Tableau</li>
+                <li>Delivered actionable insights to support business strategies through statistical methods</li>
+              </ul>
+              <div class="entry-tags">
+                <span class="tag tag-platform">Power BI</span>
+                <span class="tag tag-platform">Tableau</span>
+                <span class="tag tag-metric">Data Analysis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CERTIFICATIONS SECTION ===== -->
+    <section class="section-anchor" id="certifications">
+      <div class="container section">
+        <div class="section-title reveal">
+          <span class="section-label">Certifications & Education</span>
+          <h2>Validated <span class="title-accent">Expertise</span></h2>
+        </div>
+
+        <div class="certifications-grid">
+          <div class="card cert-card shimmer reveal" data-gtm-event="certification_click" data-gtm-cert="Delivering Quality Work with Agility" data-gtm-issuer="Coursera">
+            <div class="cert-badge" data-depth-layer>
+              <span class="badge-placeholder">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+            </div>
+            <h3>Delivering Quality Work with Agility</h3>
+            <div class="cert-issuer">Coursera</div>
+            <div class="cert-date">2024</div>
+          </div>
+
+          <div class="card cert-card shimmer reveal" data-gtm-event="certification_click" data-gtm-cert="Foundations of Data Science" data-gtm-issuer="Coursera">
+            <div class="cert-badge" data-depth-layer>
+              <span class="badge-placeholder">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+            </div>
+            <h3>Foundations of Data Science</h3>
+            <div class="cert-issuer">Coursera</div>
+            <div class="cert-date">2024</div>
+          </div>
+
+          <div class="card cert-card shimmer reveal" data-gtm-event="certification_click" data-gtm-cert="Get Started with Python" data-gtm-issuer="Coursera">
+            <div class="cert-badge" data-depth-layer>
+              <span class="badge-placeholder">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+            </div>
+            <h3>Get Started with Python</h3>
+            <div class="cert-issuer">Coursera</div>
+            <div class="cert-date">2024</div>
+          </div>
+
+          <div class="card cert-card shimmer reveal" data-gtm-event="certification_click" data-gtm-cert="Go Beyond the Numbers: Translate Data into Insights" data-gtm-issuer="Coursera">
+            <div class="cert-badge" data-depth-layer>
+              <span class="badge-placeholder">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+            </div>
+            <h3>Go Beyond the Numbers: Translate Data into Insights</h3>
+            <div class="cert-issuer">Coursera</div>
+            <div class="cert-date">2024</div>
+          </div>
+
+          <div class="card cert-card shimmer reveal" data-gtm-event="certification_click" data-gtm-cert="The Power of Statistics" data-gtm-issuer="Coursera">
+            <div class="cert-badge" data-depth-layer>
+              <span class="badge-placeholder">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+            </div>
+            <h3>The Power of Statistics</h3>
+            <div class="cert-issuer">Coursera</div>
+            <div class="cert-date">2024</div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="education-section">
+          <div class="section-title reveal">
+            <h2><span class="title-accent">Education</span></h2>
+          </div>
+
+          <div class="education-entry card reveal">
+            <div class="edu-logo">
+              <span class="logo-placeholder">NH</span>
+            </div>
+            <div class="edu-info">
+              <h3>Bachelor of Management Information Systems</h3>
+              <div class="edu-institution">Nile Higher Institutes</div>
+              <div class="edu-years">2020 – 2024</div>
+              <div class="edu-note">Mansourah, Egypt</div>
+            </div>
+          </div>
+
+          <div class="education-entry card reveal">
+            <div class="edu-logo">
+              <span class="logo-placeholder">TM</span>
+            </div>
+            <div class="edu-info">
+              <h3>Data Analysis & Business Intelligence</h3>
+              <div class="edu-institution">Tech Mind</div>
+              <div class="edu-years">2023</div>
+              <div class="edu-note">Mansourah, Egypt</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="section-anchor" id="contact">
+      <div class="container section">
+        <div class="section-title reveal">
+          <span class="section-label">Contact</span>
+          <h2>Let's Work <span class="title-accent">Together</span></h2>
+          <p>Have a project in mind? Let's turn your ad spend into growth.</p>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Left: Contact Info -->
+          <div class="contact-info reveal-left">
+            <div class="contact-info-item">
+              <div class="info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="info-text">
+                <a href="mailto:mahmoud.abdelltiif@gmail.com">mahmoud.abdelltiif@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div class="info-text">
+                <a href="tel:+201101199359">+20 110 119 9359</a>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="info-text">Dakahlia, Egypt</div>
+            </div>
+
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/mahmoudabdelltif" target="_blank" rel="noopener" class="social-link" data-gtm-event="social_link_click" data-gtm-platform="LinkedIn" data-gtm-location="contact_page">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+              <a href="https://wa.me/201101199359" target="_blank" rel="noopener" class="social-link" data-gtm-event="social_link_click" data-gtm-platform="WhatsApp" data-gtm-location="contact_page">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+
+            <div class="availability-card">
+              <span class="pulse-dot"></span>
+              <span>Available for new projects</span>
+            </div>
+          </div>
+
+          <!-- Right: Contact Form -->
+          <div class="reveal-right">
+            <form class="contact-form" id="contactForm" method="POST">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name <span class="required">*</span></label>
+                  <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email <span class="required">*</span></label>
+                  <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="+20 XXX XXX XXXX" required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="service">Service Needed <span class="required">*</span></label>
+                  <select id="service" name="service" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="Media Buying">Media Buying</option>
+                    <option value="Tracking Setup">Tracking Setup</option>
+                    <option value="Strategy Consulting">Strategy Consulting</option>
+                    <option value="Full Campaign Management">Full Campaign Management</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="budget">Budget Range <span class="required">*</span></label>
+                  <select id="budget" name="budget" required>
+                    <option value="" disabled selected>Select budget</option>
+                    <option value="< $1K">&lt; $1K</option>
+                    <option value="$1K - $5K">$1K – $5K</option>
+                    <option value="$5K - $20K">$5K – $20K</option>
+                    <option value="$20K+">$20K+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message <span class="required">*</span></label>
+                <textarea id="message" name="message" placeholder="Tell me about your project and goals..." minlength="10" required></textarea>
+              </div>
+
+              <div class="form-submit">
+                <button type="submit" class="btn-primary">
+                  <span class="btn-content">
+                    Send Message
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- Scripts -->
   <script src="assets/js/tracking.js"></script>
   <script src="assets/js/header.js"></script>
   <script src="assets/js/footer.js"></script>
-  <script src="assets/js/transition.js"></script>
   <script src="assets/js/reveal.js"></script>
   <script src="assets/js/counter.js"></script>
+  <script src="assets/js/filter.js"></script>
+  <script src="assets/js/form.js"></script>
   <script src="assets/js/effects.js"></script>
 
-  <!-- Hero-specific: Letter stagger + typing effect -->
+  <!-- Hero-specific: Letter stagger + typing effect + timeline reveal -->
   <script>
   (function() {
     // Letter stagger for name — group by word to prevent mid-word line breaks
@@ -145,7 +762,25 @@
       setTimeout(typeRole, typingSpeed);
     }
 
-    typeRole();
+    if (typingEl) typeRole();
+
+    // Timeline alternating slide-in reveal
+    const entries = document.querySelectorAll('.timeline-entry');
+    if (entries.length) {
+      const observer = new IntersectionObserver(function(items) {
+        items.forEach(function(item) {
+          if (item.isIntersecting) {
+            item.target.classList.add('revealed');
+            observer.unobserve(item.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      entries.forEach(function(entry, index) {
+        entry.classList.add(index % 2 === 0 ? 'from-left' : 'from-right');
+        observer.observe(entry);
+      });
+    }
   })();
   </script>
 </body>
