@@ -332,3 +332,134 @@ body.page-enter {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ============================================================
+   PREMIUM ANIMATIONS — Extended Keyframe Library
+   ============================================================ */
+
+/* ── Gradient text sweep ── */
+@keyframes gradientSweep {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+/* ── Slide up with fade (faster/smoother reveal) ── */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Scale fade in ── */
+@keyframes scaleFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.93) translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ── Glow pulse (repeated, stronger) ── */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+  }
+}
+
+/* ── Border glow rotate ── */
+@keyframes borderGlow {
+  0%   { border-color: rgba(37, 99, 235, 0.3); }
+  50%  { border-color: rgba(6, 182, 212, 0.5); }
+  100% { border-color: rgba(37, 99, 235, 0.3); }
+}
+
+/* ── Gentle float with glow ── */
+@keyframes floatGlow {
+  0%, 100% {
+    transform: translateY(0px);
+    filter: drop-shadow(0 0 20px rgba(37, 99, 235, 0.3));
+  }
+  50% {
+    transform: translateY(-18px);
+    filter: drop-shadow(0 0 40px rgba(37, 99, 235, 0.5));
+  }
+}
+
+/* ── Stagger reveal for grids ── */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.10s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.20s; }
+.stagger-5 { animation-delay: 0.25s; }
+.stagger-6 { animation-delay: 0.30s; }
+
+/* ── Smooth entrance for page hero ── */
+.page-hero h1,
+.page-hero p {
+  animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.page-hero p {
+  animation-delay: 0.15s;
+}
+
+/* ── Availability pulse ── */
+@keyframes availabilityPing {
+  0%   { transform: scale(1); opacity: 1; }
+  75%, 100% { transform: scale(2.2); opacity: 0; }
+}
+
+.availability-ping {
+  position: relative;
+}
+
+.availability-ping::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--accent-green);
+  animation: availabilityPing 1.8s ease-out infinite;
+}
+
+/* ── Hover underline slide ── */
+.hover-underline {
+  position: relative;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--gradient-primary);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* ── Card entrance stagger (for grid items) ── */
+.card-enter {
+  animation: scaleFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── Hero roles line animation ── */
+@keyframes lineExpand {
+  from { width: 0; opacity: 0; }
+  to   { width: 28px; opacity: 0.7; }
+}

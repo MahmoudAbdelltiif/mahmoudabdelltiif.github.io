@@ -16,9 +16,16 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 2px;
+  width: 1px;
   height: 100%;
-  background: linear-gradient(to bottom, var(--blue-primary), var(--border));
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--blue-primary) 10%,
+    rgba(6, 182, 212, 0.5) 50%,
+    rgba(37, 99, 235, 0.2) 90%,
+    transparent 100%
+  );
 }
 
 .timeline-entry {
@@ -56,18 +63,26 @@
   left: 50%;
   top: 24px;
   transform: translateX(-50%);
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: var(--bg-primary);
-  border: 3px solid var(--blue-primary);
+  background: var(--bg-secondary);
+  border: 2px solid var(--blue-primary);
   z-index: 1;
+  transition: all var(--transition-base);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.timeline-entry:hover::before {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 5px rgba(6, 182, 212, 0.15), 0 0 20px rgba(37, 99, 235, 0.3);
 }
 
 .timeline-entry.current::before {
   background: var(--blue-primary);
-  box-shadow: 0 0 0 6px var(--blue-glow);
-  animation: pulse 2s ease-in-out infinite;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.2), 0 0 0 10px rgba(37, 99, 235, 0.06);
+  animation: glowPulse 2.5s ease-in-out infinite;
 }
 
 .timeline-content {
@@ -152,10 +167,12 @@
   position: absolute;
   left: 0;
   top: 10px;
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  background: var(--blue-primary);
+  background: var(--gradient-primary);
+  background: var(--blue-mid);
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.5);
 }
 
 .timeline-entry:nth-child(odd) .achievements li::before {
