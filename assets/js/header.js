@@ -23,6 +23,7 @@
         <li><a href="#about"          data-page="about"          data-gtm-event="nav_click" data-gtm-label="About">About</a></li>
         <li><a href="#skills"         data-page="skills"         data-gtm-event="nav_click" data-gtm-label="Skills">Skills</a></li>
         <li><a href="#experience"     data-page="experience"     data-gtm-event="nav_click" data-gtm-label="Experience">Experience</a></li>
+        <li><a href="#case-study"     data-page="case-study"     data-gtm-event="nav_click" data-gtm-label="Case Study">Case Study</a></li>
         <li><a href="#certifications" data-page="certifications" data-gtm-event="nav_click" data-gtm-label="Certifications">Certifications</a></li>
         <li><a href="#contact"        data-page="contact"        data-gtm-event="nav_click" data-gtm-label="Contact" class="nav-cta">Contact</a></li>
       </ul>

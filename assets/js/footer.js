@@ -24,6 +24,7 @@
           <li><a href="#about" data-gtm-event="footer_nav_click" data-gtm-label="About">About</a></li>
           <li><a href="#skills" data-gtm-event="footer_nav_click" data-gtm-label="Skills">Skills</a></li>
           <li><a href="#experience" data-gtm-event="footer_nav_click" data-gtm-label="Experience">Experience</a></li>
+          <li><a href="#case-study" data-gtm-event="footer_nav_click" data-gtm-label="Case Study">Case Study</a></li>
           <li><a href="#contact" data-gtm-event="footer_nav_click" data-gtm-label="Contact">Contact</a></li>
         </ul>
       </div>

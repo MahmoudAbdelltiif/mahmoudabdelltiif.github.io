@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="assets/css/about.css">
   <link rel="stylesheet" href="assets/css/skills.css">
   <link rel="stylesheet" href="assets/css/experience.css">
+  <link rel="stylesheet" href="assets/css/cs-showcase.css">
   <link rel="stylesheet" href="assets/css/certifications.css">
   <link rel="stylesheet" href="assets/css/contact.css">
 
@@ -40,46 +41,65 @@
     </div>
 
     <div class="hero-content" data-tilt-scene>
-      <!-- Typed Roles -->
-      <div class="hero-roles reveal">
-        <span class="typing-text" id="typingText"></span>
+      <div class="hero-text">
+        <!-- Typed Roles -->
+        <div class="hero-roles reveal">
+          <span class="typing-text" id="typingText"></span>
+        </div>
+
+        <!-- Name with letter stagger -->
+        <h1 class="hero-name" id="heroName">
+          <!-- Letters injected by JS -->
+        </h1>
+
+        <!-- Tagline -->
+        <p class="hero-tagline reveal">
+          Data-driven performance marketer turning ad spend into measurable growth. Specializing in Meta, Google, and TikTok advertising.
+        </p>
+
+        <!-- CTAs -->
+        <div class="hero-ctas reveal">
+          <a href="#contact" class="btn-primary" data-gtm-event="hero_cta_click" data-gtm-label="Let's Work Together">
+            Let's Work Together
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="assets/docs/Mahmoud_Abdellatif_CV.pdf" class="btn-outline" download data-gtm-event="cv_download" data-gtm-label="Download CV">
+            Download CV
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </a>
+        </div>
+
+        <!-- Stats Strip -->
+        <div class="hero-stats reveal" data-gtm-event="hero_stats_view">
+          <div class="hero-stat">
+            <div class="stat-number"><span data-counter data-target="50" data-suffix="+">0+</span></div>
+            <div class="stat-label">Campaigns</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number"><span data-counter data-target="500" data-prefix="$" data-suffix="K+">$0K+</span></div>
+            <div class="stat-label">Ad Spend Managed</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number"><span data-counter data-target="21" data-suffix="x+">0x+</span></div>
+            <div class="stat-label">Avg ROAS</div>
+          </div>
+        </div>
       </div>
 
-      <!-- Name with letter stagger -->
-      <h1 class="hero-name" id="heroName">
-        <!-- Letters injected by JS -->
-      </h1>
-
-      <!-- Tagline -->
-      <p class="hero-tagline reveal">
-        Data-driven performance marketer turning ad spend into measurable growth. Specializing in Meta, Google, and TikTok advertising.
-      </p>
-
-      <!-- CTAs -->
-      <div class="hero-ctas reveal">
-        <a href="#contact" class="btn-primary" data-gtm-event="hero_cta_click" data-gtm-label="Let's Work Together">
-          Let's Work Together
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="assets/docs/Mahmoud_Abdellatif_CV.pdf" class="btn-outline" download data-gtm-event="cv_download" data-gtm-label="Download CV">
-          Download CV
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-        </a>
-      </div>
-
-      <!-- Stats Strip -->
-      <div class="hero-stats reveal" data-gtm-event="hero_stats_view">
-        <div class="hero-stat">
-          <div class="stat-number"><span data-counter data-target="50" data-suffix="+">0+</span></div>
-          <div class="stat-label">Campaigns</div>
+      <!-- Portrait -->
+      <div class="hero-portrait reveal-right">
+        <div class="hero-portrait-ring"></div>
+        <div class="hero-portrait-frame">
+          <img src="assets/images/profile/Mahmoud.jpeg" alt="Mahmoud Abdellatif — Performance Marketer" loading="eager" width="440" height="560">
+          <div class="hero-portrait-overlay"></div>
         </div>
-        <div class="hero-stat">
-          <div class="stat-number"><span data-counter data-target="500" data-prefix="$" data-suffix="K+">$0K+</span></div>
-          <div class="stat-label">Ad Spend Managed</div>
+        <div class="hero-portrait-badge">
+          <span class="badge-dot"></span>
+          Available for Work
         </div>
-        <div class="hero-stat">
-          <div class="stat-number"><span data-counter data-target="21" data-suffix="x+">0x+</span></div>
-          <div class="stat-label">Avg ROAS</div>
+        <div class="hero-portrait-chip">
+          <strong>37.66<span class="chip-x">×</span></strong>
+          <span>Peak ROAS</span>
         </div>
       </div>
     </div>
@@ -487,6 +507,18 @@
       </div>
     </section>
 
+    <!-- ===== CASE STUDY SECTION (cinematic, rendered by case-study.js) ===== -->
+    <section class="section-anchor" id="case-study">
+      <div class="container section">
+        <div class="section-title reveal">
+          <span class="section-label">Featured Case Study</span>
+          <h2>Real Results, <span class="title-accent">Real Growth</span></h2>
+          <p>A seasonal campaign that turned ad spend into measurable returns</p>
+        </div>
+        <div id="caseStudyShowcase"></div>
+      </div>
+    </section>
+
     <!-- ===== CERTIFICATIONS SECTION ===== -->
     <section class="section-anchor" id="certifications">
       <div class="container section">
@@ -710,6 +742,8 @@
   <script src="assets/js/counter.js"></script>
   <script src="assets/js/filter.js"></script>
   <script src="assets/js/form.js"></script>
+  <script src="data/case-studies.js"></script>
+  <script src="assets/js/case-study.js"></script>
   <script src="assets/js/effects.js"></script>
 
   <!-- Hero-specific: Letter stagger + typing effect + timeline reveal -->
