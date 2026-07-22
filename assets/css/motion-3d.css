@@ -171,3 +171,80 @@ select:focus-visible {
   .reveal-right { transform: translateX(28px); }
   .reveal-right.revealed { transform: none; }
 }
+
+/* ── 3D Profile Photo Stack ── */
+.profile-3d-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: perspective(1000px) rotateY(-15deg) scale(0.92);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  border-radius: var(--radius-xl);
+}
+
+.profile-3d-slide.active {
+  opacity: 1;
+  transform: perspective(1000px) rotateY(0deg) scale(1);
+  pointer-events: auto;
+}
+
+.profile-3d-controls {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%) translateZ(80px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(14, 20, 48, 0.82);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-blue);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.p3d-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.p3d-btn:hover {
+  background: var(--blue-primary);
+  color: #ffffff;
+}
+
+.p3d-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.p3d-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.p3d-dot.active {
+  background: var(--accent-cyan);
+  width: 18px;
+  border-radius: 10px;
+}

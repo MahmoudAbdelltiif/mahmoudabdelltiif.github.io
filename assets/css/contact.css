@@ -71,6 +71,15 @@
   opacity: 1;
 }
 
+.contact-card-linkedin {
+  border-color: rgba(10, 102, 194, 0.3);
+}
+
+.contact-card-linkedin::before {
+  background: linear-gradient(90deg, #0A66C2, #004182);
+  opacity: 1;
+}
+
 .c-icon-box {
   width: 52px;
   height: 52px;
@@ -166,6 +175,18 @@
 
 .btn-phone:hover {
   background: var(--blue-primary);
+  color: #ffffff;
+}
+
+.btn-linkedin {
+  background: linear-gradient(135deg, #0A66C2 0%, #004182 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(10, 102, 194, 0.3);
+}
+
+.btn-linkedin:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(10, 102, 194, 0.5);
   color: #ffffff;
 }
 
