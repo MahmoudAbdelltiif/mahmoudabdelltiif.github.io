@@ -1,0 +1,203 @@
+/* ============================================================
+   CONTACT.CSS — Direct Contact Cards Styles (No Form)
+   ============================================================ */
+
+.contact-layout-direct {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(20px, 3vw, 30px);
+  margin-top: 30px;
+}
+
+.contact-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 4vw, 36px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-card:hover::before {
+  opacity: 1;
+}
+
+.contact-card-whatsapp {
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.contact-card-whatsapp::before {
+  background: linear-gradient(90deg, #22C55E, #10B981);
+  opacity: 1;
+}
+
+.contact-card-email {
+  border-color: rgba(34, 211, 238, 0.3);
+}
+
+.contact-card-email::before {
+  background: linear-gradient(90deg, #22D3EE, #3B82F6);
+  opacity: 1;
+}
+
+.contact-card-phone {
+  border-color: rgba(45, 107, 255, 0.3);
+}
+
+.contact-card-phone::before {
+  background: linear-gradient(90deg, #2D6BFF, #8B5CF6);
+  opacity: 1;
+}
+
+.c-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(45, 107, 255, 0.1);
+  color: var(--blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.contact-card-whatsapp .c-icon-box {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22C55E;
+}
+
+.contact-card-email .c-icon-box {
+  background: rgba(34, 211, 238, 0.12);
+  color: #22D3EE;
+}
+
+.contact-card-phone .c-icon-box {
+  background: rgba(45, 107, 255, 0.12);
+  color: #60A5FA;
+}
+
+.c-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.c-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  word-break: break-all;
+}
+
+.c-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.btn-contact-action {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.btn-whatsapp {
+  background: #22C55E;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.3);
+}
+
+.btn-whatsapp:hover {
+  background: #16A34A;
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.45);
+}
+
+.btn-email {
+  background: var(--blue-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 16px var(--blue-glow);
+}
+
+.btn-email:hover {
+  background: var(--blue-deep);
+  box-shadow: 0 6px 20px var(--blue-glow);
+}
+
+.btn-phone {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border-blue);
+}
+
+.btn-phone:hover {
+  background: var(--blue-primary);
+  color: #ffffff;
+}
+
+/* ── Contact Social Strip ── */
+.contact-social-strip {
+  grid-column: 1 / -1;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.location-info svg {
+  color: var(--accent-rose);
+}
+
+.contact-social-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}

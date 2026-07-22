@@ -1,0 +1,348 @@
+/* ============================================================
+   ABOUT.CSS — About Me Page Styles
+   ============================================================ */
+
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: clamp(32px, 6vw, 60px);
+  align-items: center;
+  padding: clamp(48px, 8vw, 80px) 0;
+}
+
+.about-photo-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo {
+  width: clamp(200px, 32vw, 300px);
+  height: clamp(200px, 32vw, 300px);
+  border-radius: var(--radius-lg);
+  border: 2px solid rgba(37, 99, 235, 0.4);
+  box-shadow:
+    0 0 0 6px rgba(37, 99, 235, 0.06),
+    0 0 0 12px rgba(6, 182, 212, 0.03),
+    0 0 60px rgba(37, 99, 235, 0.25),
+    0 32px 80px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  animation: floatGlow 7s ease-in-out infinite;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.about-info h2 {
+  margin-bottom: 8px;
+}
+
+.about-info .about-title {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  color: var(--blue-light);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.about-info .about-bio p {
+  margin-bottom: 16px;
+}
+
+.about-badges {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: clamp(7px, 1.2vw, 10px) clamp(14px, 2.5vw, 20px);
+  background: rgba(34, 197, 94, 0.07);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: var(--radius-full);
+  font-size: clamp(0.75rem, 1.3vw, 0.85rem);
+  color: var(--accent-green);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+.availability-badge .pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.availability-badge .pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--accent-green);
+  animation: availabilityPing 1.8s ease-out infinite;
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(34, 197, 94, 0.25); }
+  50%       { border-color: rgba(34, 197, 94, 0.5); box-shadow: 0 0 16px rgba(34, 197, 94, 0.15); }
+}
+
+/* Metrics Strip */
+.metrics-strip {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, rgba(6, 182, 212, 0.02) 100%);
+  border-top: 1px solid rgba(37, 99, 235, 0.12);
+  border-bottom: 1px solid rgba(37, 99, 235, 0.12);
+  padding: clamp(40px, 6vw, 64px) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.metrics-strip::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px; height: 200px;
+  background: radial-gradient(ellipse, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 3vw, 32px);
+  text-align: center;
+  position: relative;
+}
+
+.metric-item {
+  padding: clamp(16px, 2vw, 24px) clamp(8px, 1.5vw, 16px);
+  border-right: 1px solid var(--border);
+}
+
+.metric-item:last-child {
+  border-right: none;
+}
+
+.metric-item .metric-number {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric-item .metric-number span {
+  background: var(--gradient-primary);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.metric-item .metric-label {
+  font-size: clamp(0.68rem, 1.3vw, 0.8rem);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+}
+
+/* What I Do */
+.what-i-do {
+  padding: clamp(48px, 8vw, 80px) 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 3vw, 24px);
+}
+
+.service-card {
+  padding: clamp(24px, 4vw, 36px);
+  text-align: center;
+}
+
+.service-card .service-icon {
+  width: clamp(48px, 7vw, 64px);
+  height: clamp(48px, 7vw, 64px);
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(6, 182, 212, 0.08) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto clamp(16px, 2.5vw, 24px);
+  color: var(--blue-light);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.12);
+}
+
+.service-card:hover .service-icon {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2) 0%, rgba(6, 182, 212, 0.15) 100%);
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.25);
+  transform: translateY(-2px);
+}
+
+.service-card h3 {
+  margin-bottom: 12px;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+}
+
+.service-card p {
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .about-intro {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .about-photo {
+    margin: 0 auto;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .metric-item {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: clamp(16px, 3vw, 24px);
+  }
+  .metric-item:last-child,
+  .metric-item:nth-child(2) {
+    border-bottom: none;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-badges {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-intro {
+    grid-template-columns: 1fr 1.2fr;
+    gap: clamp(24px, 4vw, 40px);
+  }
+}
+
+/* ── Small Phones (≤ 480px) ── */
+@media (max-width: 480px) {
+  .about-intro {
+    padding: 28px 0;
+    gap: 24px;
+  }
+
+  .about-photo {
+    width: clamp(140px, 45vw, 200px);
+    height: clamp(140px, 45vw, 200px);
+  }
+
+  .about-info h2 {
+    font-size: clamp(1.4rem, 7vw, 2rem);
+  }
+
+  .about-badges {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .metrics-grid {
+    gap: clamp(12px, 3vw, 20px);
+  }
+
+  .metric-item .metric-number {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .metric-item .metric-label {
+    font-size: 0.65rem;
+  }
+
+  .services-grid {
+    gap: 12px;
+  }
+
+  .service-card {
+    padding: clamp(16px, 4vw, 24px);
+  }
+
+  .service-card .service-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .service-card h3 {
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
+  }
+
+  .service-card p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ── Very Small Phones (≤ 360px) ── */
+@media (max-width: 360px) {
+  .about-intro {
+    padding: 20px 0;
+  }
+
+  .about-photo {
+    width: 130px;
+    height: 130px;
+  }
+
+  .metrics-strip {
+    padding: 24px 0;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .metric-item .metric-number {
+    font-size: 1.4rem;
+  }
+
+  .metric-item .metric-label {
+    font-size: 0.6rem;
+    letter-spacing: 0;
+  }
+}

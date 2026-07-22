@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | Mahmoud Abdellatif</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+  <!-- Header injected by header.js -->
+
+  <section style="min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;position:relative;overflow:hidden;">
+    <!-- Background glow -->
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(37,99,235,0.1) 0%,transparent 70%);pointer-events:none;"></div>
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(37,99,235,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,0.05) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 100%);pointer-events:none;"></div>
+    <div style="position:relative;z-index:1;">
+      <div style="font-family:'Syne',sans-serif;font-size:clamp(5rem,15vw,10rem);font-weight:800;line-height:1;letter-spacing:-0.04em;background:linear-gradient(135deg,#93C5FD 0%,#06B6D4 50%,#60A5FA 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;">404</div>
+      <h2 style="font-size:clamp(1.2rem,3vw,2rem);margin-bottom:16px;color:var(--text-primary);">Page Not Found</h2>
+      <p style="color:var(--text-secondary);margin-bottom:40px;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.7;">
+        The page you're looking for doesn't exist or has been moved. Let's get you back on track.
+      </p>
+      <a href="index.html" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Home
+      </a>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="assets/js/tracking.js"></script>
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/footer.js"></script>
+  <script src="assets/js/effects.js"></script>
+</body>
+</html>
