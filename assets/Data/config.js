@@ -17,9 +17,9 @@ window.PORTFOLIO_CONFIG = {
   campaigns: [
     {
       id: "group-01",
-      category: "تجارة إلكترونية (E-commerce)",
+      category: "E-commerce",
       keyMetric: "37.66X ROAS | SAR 182.8K Sales",
-      platforms: ["Meta Ads", "Google Ads", "TikTok Ads", "Salla"],
+      platforms: ["Meta Ads", "Google Ads", "Snapchat Ads", "TikTok Ads", "Salla"],
       images: [
         "assets/Data/Case_Studies/اضاحي البركة/imageye___-_imgi_8_width_1600.webp",
         "assets/Data/Case_Studies/اضاحي البركة/imageye___-_imgi_8_width_1600 (1).webp",
@@ -33,9 +33,9 @@ window.PORTFOLIO_CONFIG = {
     },
     {
       id: "group-02",
-      category: "استقطاب عملاء وعقارات (Lead Generation)",
+      category: "اLead Generation",
       keyMetric: "High-Ticket Lead Generation",
-      platforms: ["Meta Ads", "Google Ads"],
+      platforms: ["Snapchat Ads"],
       images: [
         "assets/Data/Case_Studies/اهل السداد/imageye___-_imgi_9_width_1600.webp",
         "assets/Data/Case_Studies/اهل السداد/imageye___-_imgi_11_width_1600.webp"
@@ -43,9 +43,9 @@ window.PORTFOLIO_CONFIG = {
     },
     {
       id: "group-03",
-      category: "خدمات طبية وحجوزات (Healthcare & Booking)",
+      category: "Healthcare & Booking",
       keyMetric: "High-Intent Patient Booking",
-      platforms: ["Meta Ads", "Snapchat Ads"],
+      platforms: ["Snapchat Ads"],
       images: [
         "assets/Data/Case_Studies/سحاب للعلاج الطبيعي/imageye___-_imgi_12_width_1600.webp",
         "assets/Data/Case_Studies/سحاب للعلاج الطبيعي/imageye___-_imgi_14_width_1600.webp"
@@ -53,18 +53,18 @@ window.PORTFOLIO_CONFIG = {
     },
     {
       id: "group-04",
-      category: "خدمات تعليمية (Education & Enrollment)",
+      category: "Education & Enrollment",
       keyMetric: "Enrollment & Lead Acquisition",
-      platforms: ["Google Ads", "Meta Ads"],
+      platforms: ["Snapchat Ads"],
       images: [
         "assets/Data/Case_Studies/مركز البشائر/imageye___-_imgi_11_width_1600.webp"
       ]
     },
     {
       id: "group-05",
-      category: "خدمات محلية (Local Services Growth)",
+      category: "Local Services Growth",
       keyMetric: "Brand Reach & Customer Acquisition",
-      platforms: ["Meta Ads", "TikTok Ads"],
+      platforms: ["Meta Ads"],
       images: [
         "assets/Data/Case_Studies/مغاسل الفيصل/imageye___-_imgi_19_width_1600.webp"
       ]
